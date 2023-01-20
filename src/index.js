@@ -1,7 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import { createRoot } from "react-dom/client";
+import Activity from "./Activity";
 
-const el = document.getElementById("app");
+// class Hello extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         <div>Hello dumb</div>
+//         <Activity />
+//       </div>
+//     );
+//   }
+// }
 
-ReactDOM.render(<App />, el);
+ReactDOM.render(<Activity />, document.getElementById("root"));
+
+// const container = document.getElementById("root");
+// const root = createRoot(container);
+// root.render(<Hello />);
+
+//ReactDOM.render(<Activity />, document.getElementById("test"));
