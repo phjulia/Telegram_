@@ -8,7 +8,10 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
+        include: [
+          path.resolve(__dirname, "src"),
+          path.resolve(__dirname, "node_modules/@salesforce"),
+        ],
         loader: "babel-loader",
         //use: ["babel-loader"],
         options: { presets: ["@babel/env", "@babel/preset-react"] },
