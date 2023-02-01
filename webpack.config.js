@@ -11,6 +11,9 @@ module.exports = {
         include: [
           path.resolve(__dirname, "src"),
           path.resolve(__dirname, "node_modules/@salesforce"),
+          path.resolve(
+            "/layers/paketo-buildpacks_npm-install/build-modules/node_modules/"
+          ),
         ],
         loader: "babel-loader",
         //use: ["babel-loader"],
