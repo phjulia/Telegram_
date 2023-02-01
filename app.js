@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, "./build")));
 app.get("/", async (req, res) => {
   res.status(200).sendFile(path.join(__dirname, "../build"), "index.html");
 });
-
+app.use(require("./src/server/routes"));
 app.listen(8080, "0.0.0.0", (err) => {
   if (err) {
     return console.log(err);
