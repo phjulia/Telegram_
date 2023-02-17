@@ -2,15 +2,15 @@
     "workflowApiVersion": "1.1",
     "metaData": {
         "version": "2.0",
-        "icon": "{{EndPoint}}assets/images/viber.png",
+        "icon": "telegram.png",
         "expressionBuilderPrefix": "Custom",
-        "category": "customer"
+        "category": "message"
     },
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "Viber-{{ENV}}",
-            "description": "Viber for define Contact Information "
+            "name": "Telegram",
+            "description": "Telegram"
         }
     },
     "copySettings": { "allowCopy": true },
@@ -18,95 +18,37 @@
         "execute": {
             "inArguments": [],
             "outArguments": [],
-            "url": "{{EndPoint}}viber/execute",
+            "url": "https://young-dream-1041.fly.dev/execute",
             "verb": "POST",
             "body": "",
             "header": "",
             "format": "json",
-            "useJwt": true,
-            "customerKey": "{{ENCRYPTION}}",
-            "timeout": 10000
-        },
-        "testExecute": {
-            "inArguments": [],
-            "outArguments": [],
-            "url": "{{EndPoint}}viber/testExecute",
-            "verb": "POST",
-            "body": "",
-            "header": "",
-            "format": "json",
-            "useJwt": true,
-            "customerKey": "{{ENCRYPTION}}",
+            "useJwt": false,
             "timeout": 10000
         }
     },
     "configurationArguments": {
-        "applicationExtensionKey": "Test_Viber",
+        "applicationExtensionKey": "Test_Telegram",
         "save": {
-            "url": "{{EndPoint}}viber/save",
+            "url": "https://young-dream-1041.fly.dev/save",
             "body": "",
-            "header": "",
             "verb": "POST",
-            "useJwt": true,
-            "customerKey": "{{ENCRYPTION}}"
+            "useJwt": false
         },
         "publish": {
-            "url": "{{EndPoint}}viber/publish",
+            "url": "https://young-dream-1041.fly.dev/publish",
             "verb": "POST",
-            "header": "",
             "body": "",
-            "useJwt": true,
-            "customerKey": "{{ENCRYPTION}}"
+            "useJwt": false
         },
         "validate": {
-            "url": "{{EndPoint}}viber/validate",
-            "verb": "POST",
-            "header": "",
-            "body": "",
-            "useJwt": true,
-            "customerKey": "{{ENCRYPTION}}"
-        },
-        "testSave": {
-            "url": "{{EndPoint}}viber/testSave",
-            "body": "",
-            "header": "",
-            "verb": "POST",
-            "useJwt": true,
-            "customerKey": "{{ENCRYPTION}}"
-        },
-        "testPublish": {
-            "url": "{{EndPoint}}viber/testPublish",
-            "verb": "POST",
-            "header": "",
-            "body": "",
-            "useJwt": true,
-            "customerKey": "{{ENCRYPTION}}"
-        },
-        "testValidate": {
-            "url": "{{EndPoint}}viber/testValidate",
-            "verb": "POST",
-            "header": "",
-            "body": "",
-            "useJwt": true,
-            "customerKey": "{{ENCRYPTION}}"
+            "url": "https://young-dream-1041.fly.dev/validate"
         }
     },
     "edit": {
-        "url": "{{EndPoint}}viber",
+        "url": "https://young-dream-1041.fly.dev",
         "height": 500,
         "width": 800
-    },
-    "userInterfaces": {
-        "configInspector": {
-            "size": "large",
-            "isModalLayout": true
-        },
-        "runningHover": {
-            "url": "{{EndPoint}}viber/running"
-        },
-        "runningModal": {
-            "url": "{{EndPoint}}viber/running"
-        }
     }
   }
   

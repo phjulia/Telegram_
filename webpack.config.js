@@ -19,6 +19,10 @@ module.exports = {
         //use: ["babel-loader"],
         options: { presets: ["@babel/env", "@babel/preset-react"] },
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
   // pass all js files through Babel
