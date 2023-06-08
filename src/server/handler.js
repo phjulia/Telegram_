@@ -20,7 +20,7 @@ module.exports = {
       //insert in db etc data extension
       return response;
     } catch (err) {
-      console.err(err.message);
+      console.error(err.message);
     }
   },
   async sendSuccessfullResponse(req, res) {

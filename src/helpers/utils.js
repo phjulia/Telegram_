@@ -13,4 +13,7 @@ module.exports = {
     const message = req.body.inArguments[0].config.message;
     return [user_id, message];
   },
+  async getSchema() {
+    const response = fetch("/hub/v1/contacts/schema/", (req, res) => {});
+  },
 };

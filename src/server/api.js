@@ -5,7 +5,15 @@ const handler = require("./handler.js");
 /**
  * Get Schema definition from Marketing Cloud
  */
-router.get("/getSchema", (req, res) => {
+router.get("/getSchema", async (req, res) => {
+  const schema = await fetch("/hub/v1/contacts/schema/", {
+    method: "GET",
+    headers: {
+      Autorization: `Bearer ${req.session.userInfo.Bea}`,
+      "Content-Type": "application/json",
+    },
+  });
+  console.log("Request session user INFO", req.session.userInfo);
   return "test";
 });
 /**

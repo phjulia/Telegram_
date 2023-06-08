@@ -3,6 +3,7 @@ import Textarea from "@salesforce/design-system-react/components/textarea";
 import PropTypes from "prop-types";
 import Icon from "@salesforce/design-system-react/components/icon";
 import { Card } from "@salesforce/design-system-react";
+import DataModelPicker from "../components/DataModelPicker";
 
 class Step1 extends Component {
   constructor(props) {
@@ -36,9 +37,8 @@ class Step1 extends Component {
                   heading="Personalization"
                   icon={<Icon category="action" name="user" size="small" />}
                   bodyClassName="dataPickerCard"
-                >
-                  <DataModelPicker />
-                </Card>
+                ></Card>
+                <DataModelPicker journeyData={this.props.schema} />
               </div>
               <div className="slds-col slds-size_2-of-3">
                 <h1 className="slds-text-title_caps slds-p-vertical_medium">

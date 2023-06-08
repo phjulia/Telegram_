@@ -17,10 +17,6 @@ module.exports = function (state) {
       interactionId: "{{Context.originalDefinitionId}}",
     },
   ];
-  console.log(
-    "payload.arguments.execute.inArguments.mobilePhone",
-    payload.arguments.execute.inArguments[0].mobilePhone
-  );
   payload.arguments.execute.outArguments = [];
   payload.schema = {
     arguments: {
