@@ -70,7 +70,7 @@ module.exports = function (fastify, options, next) {
     res.redirect("https://telegram-6-79bd05dd5fd2.herokuapp.com/telegram");
   });
   fastify.get("/telegram", async (req, res) => {
-    res.sendFile("/public/index.html");
+    res.sendfile("index.html");
   });
 
   /**
@@ -85,7 +85,9 @@ module.exports = function (fastify, options, next) {
    */
   fastify.get("/edit", (req, res) => {
     console.log("----------------------EDIT-------------------");
-    const u = new URL("https://telegram-6-79bd05dd5fd2.herokuapp.com/login");
+    const u = new URL(
+      "https://telegram-6-79bd05dd5fd2.herokuapp.com/telegram/login"
+    );
     res.redirect(u.toString());
   });
   /**
@@ -103,7 +105,9 @@ module.exports = function (fastify, options, next) {
   fastify.get("/", (req, res) => {
     console.log("-------------HOME----------------");
     //const u = new URL("https://young-dream-1041.fly.dev/auth/login/");
-    const u = new URL("https://telegram-6-79bd05dd5fd2.herokuapp.com/login");
+    const u = new URL(
+      "https://telegram-6-79bd05dd5fd2.herokuapp.com/telegram/login"
+    );
 
     res.redirect(u.toString());
   });
