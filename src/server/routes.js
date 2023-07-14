@@ -70,6 +70,7 @@ module.exports = function (fastify, options, next) {
     res.redirect("https://telegram-6-79bd05dd5fd2.herokuapp.com/telegram");
   });
   fastify.get("/telegram", (req, res) => {
+    console.log("/telegram");
     res.sendFile("index.html");
   });
 
