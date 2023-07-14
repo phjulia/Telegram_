@@ -58,7 +58,7 @@ module.exports = function (fastify, options, next) {
       console.log("-------------inside IF");
       req.session.token = await getToken(
         req,
-        `https://young-dream-1041.fly.dev/response`,
+        `https://telegram-6-79bd05dd5fd2.herokuapp.com/response`,
         client_id,
         tenant
       );
@@ -67,7 +67,7 @@ module.exports = function (fastify, options, next) {
       //console.log("req.session.userInfo", req.session.userInfo);
     }
     //get user and mid etc
-    res.redirect("https://young-dream-1041.fly.dev/telegram");
+    res.redirect("https://telegram-6-79bd05dd5fd2.herokuapp.com/telegram");
   });
   fastify.get("/telegram", async (req, res) => {
     res.sendFile("/public/index.html");
@@ -85,7 +85,7 @@ module.exports = function (fastify, options, next) {
    */
   fastify.get("/edit", (req, res) => {
     console.log("----------------------EDIT-------------------");
-    const u = new URL("https://young-dream-1041.fly.dev/login");
+    const u = new URL("https://telegram-6-79bd05dd5fd2.herokuapp.com/login");
     res.redirect(u.toString());
   });
   /**
@@ -103,14 +103,14 @@ module.exports = function (fastify, options, next) {
   fastify.get("/", (req, res) => {
     console.log("-------------HOME----------------");
     //const u = new URL("https://young-dream-1041.fly.dev/auth/login/");
-    const u = new URL("https://young-dream-1041.fly.dev/login");
+    const u = new URL("https://telegram-6-79bd05dd5fd2.herokuapp.com/login");
 
     res.redirect(u.toString());
   });
   fastify.get("/running", (req, res) => {
     console.log("in running");
     const u = new URL(
-      "https://young-dream-1041.fly.dev/auth/login/activityRunning"
+      "https://telegram-6-79bd05dd5fd2.herokuapp.com/auth/login/activityRunning"
     );
     res.redirect(u.toString());
   });

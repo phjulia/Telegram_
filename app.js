@@ -10,12 +10,8 @@ fastify.register(require("@fastify/session"), {
     sameSite: "None",
   },
 });
-// app.register(require("./src/server/routes"));
+app.register(require("./src/server/routes"));
 // app.register(require("./src/server/api"));
-fastify.get("/", (req, res) => {
-  console.log("In the root");
-  return "test";
-});
 // fastify.register(require("./src/server/api.js"));
 // fastify.register(require("@fastify/static"), {
 //   root: path.join(__dirname, "public"),
