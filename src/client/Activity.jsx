@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Step1 from "./steps/Step1";
+import Step1 from "./steps/Step1.jsx";
 import esd from "../client/components/entrySourceDispatcher.js";
-import StepManager from "../client/StepManager";
+import StepManager from "../client/StepManager.jsx";
 
 export class Activity extends Component {
   constructor(props) {
