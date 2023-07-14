@@ -69,8 +69,8 @@ module.exports = function (fastify, options, next) {
     //get user and mid etc
     res.redirect("https://telegram-6-79bd05dd5fd2.herokuapp.com/telegram");
   });
-  fastify.get("/telegram", async (req, res) => {
-    res.sendfile("index.html");
+  fastify.get("/telegram", (req, res) => {
+    res.sendFile("index.html");
   });
 
   /**
