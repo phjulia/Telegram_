@@ -45,7 +45,7 @@ module.exports = function (fastify, options, next) {
       state: random,
     });
     console.log("u.toString: ", u.toString());
-    res.sendFile("index.html");
+    //res.redi("index.html");
     //res.redirect(u.toString()); //TOFIX
   });
   fastify.get("/telegram/response", async (req, res) => {
