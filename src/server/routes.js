@@ -45,7 +45,8 @@ module.exports = function (fastify, options, next) {
       state: random,
     });
     console.log("u.toString: ", u.toString());
-    res.redirect(u.toString()); //TOFIX
+    res.sendFile("index.html");
+    //res.redirect(u.toString()); //TOFIX
   });
   fastify.get("/telegram/response", async (req, res) => {
     const tenant = "mcffrcsjyrj1cl3cgq5-96gnk041";
@@ -103,7 +104,7 @@ module.exports = function (fastify, options, next) {
     console.log("in stop");
     res.code(200).send({ success: true });
   });
-  fastify.get("/telegram", (req, res) => {
+  fastify.get("/telegram/index.html", (req, res) => {
     console.log("-------------HOME----------------");
     //const u = new URL("https://young-dream-1041.fly.dev/auth/login/");
     const u = new URL(
