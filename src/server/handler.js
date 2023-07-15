@@ -3,7 +3,7 @@
 const mysql = require("../helpers/db.js");
 const utils = require("../helpers/utils.js");
 
-const { subscribe } = require("./routes");
+// const { subscribe } = require("./routes");
 
 module.exports = {
   async handleExecute(req, res) {
