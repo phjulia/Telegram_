@@ -15,6 +15,9 @@ module.exports = function (fastify, options, next) {
     console.log("Request session user INFO", req.session.userInfo);
     return "test";
   });
+  fastify.get("/telegram.png", (req, res) => {
+    res.sendfile("telegram.png");
+  });
   /**
    * @description A webhook to get bot updates
    */
