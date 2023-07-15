@@ -46,6 +46,7 @@
     "express-session": "^1.17.3",
     "express-static": "^1.2.6",
     "fastify": "^4.17.0",
+    "fastify-static": "^4.7.0",
     "fuel-auth": "^3.3.0",
     "local-storage": "^2.0.0",
     "mini-css-extract-plugin": "^2.7.2",
