@@ -46,6 +46,7 @@ module.exports = function (fastify, options, next) {
     });
     console.log("u.toString: ", u.toString());
     //res.redi("index.html");
+    res.redirect("/");
     //res.redirect(u.toString()); //TOFIX
   });
   fastify.get("/telegram/response", async (req, res) => {
