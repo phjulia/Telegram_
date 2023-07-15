@@ -26,6 +26,10 @@ module.exports = function (fastify, options, next) {
     console.log("In the publish");
     res.code(200).send({ success: true });
   });
+  fastify.get("/telegram.png", (req, res) => {
+    console.log("in telegram.png");
+    res.sendfile("telegram.png");
+  });
   fastify.get("/telegram/login", async (req, res) => {
     console.log("*****************LOGIN******************");
     const tenant = "mcffrcsjyrj1cl3cgq5-96gnk041";
