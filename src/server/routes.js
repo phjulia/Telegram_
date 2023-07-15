@@ -69,10 +69,10 @@ module.exports = function (fastify, options, next) {
     //get user and mid etc
     res.redirect("https://telegram-6-79bd05dd5fd2.herokuapp.com/telegram");
   });
-  // fastify.get("/telegram", (req, res) => {
-  //   console.log("/telegram");
-  //   res.sendFile("index.html");
-  // });
+  fastify.get("/", (req, res) => {
+    console.log("/");
+    res.sendFile("index.html");
+  });
 
   /**
    * @description A function that is called on journey validation
