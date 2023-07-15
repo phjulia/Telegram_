@@ -96,9 +96,7 @@ module.exports = function (fastify, options, next) {
    */
   fastify.get("/edit", (req, res) => {
     console.log("----------------------EDIT-------------------");
-    const u = new URL(
-      "https://telegram-6-79bd05dd5fd2.herokuapp.com/telegram/login"
-    );
+    const u = new URL("https://telegram-6-79bd05dd5fd2.herokuapp.com/");
     res.redirect(u.toString());
   });
   /**
