@@ -111,15 +111,15 @@ module.exports = function (fastify, options, next) {
     console.log("in stop");
     res.code(200).send({ success: true });
   });
-  fastify.get("/telegram/index.html", (req, res) => {
-    console.log("-------------HOME----------------");
-    //const u = new URL("https://young-dream-1041.fly.dev/auth/login/");
-    const u = new URL(
-      "https://telegram-6-79bd05dd5fd2.herokuapp.com/telegram/login"
-    );
+  // fastify.get("/telegram/index.html", (req, res) => {
+  //   console.log("-------------HOME----------------");
+  //   //const u = new URL("https://young-dream-1041.fly.dev/auth/login/");
+  //   const u = new URL(
+  //     "https://telegram-6-79bd05dd5fd2.herokuapp.com/telegram/login"
+  //   );
 
-    res.redirect(u.toString());
-  });
+  //   res.redirect(u.toString());
+  // });
   fastify.get("/running", (req, res) => {
     console.log("in running");
     const u = new URL(
