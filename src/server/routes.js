@@ -69,10 +69,10 @@ module.exports = function (fastify, options, next) {
     //get user and mid etc
     res.redirect("https://telegram-6-79bd05dd5fd2.herokuapp.com/telegram");
   });
-  fastify.get("/telegram", (req, res) => {
-    console.log("/telegram");
-    res.sendFile("index.html");
-  });
+  // fastify.get("/telegram", (req, res) => {
+  //   console.log("/telegram");
+  //   res.sendFile("index.html");
+  // });
 
   /**
    * @description A function that is called on journey validation
@@ -103,7 +103,7 @@ module.exports = function (fastify, options, next) {
     console.log("in stop");
     res.code(200).send({ success: true });
   });
-  fastify.get("/", (req, res) => {
+  fastify.get("/telegram", (req, res) => {
     console.log("-------------HOME----------------");
     //const u = new URL("https://young-dream-1041.fly.dev/auth/login/");
     const u = new URL(
