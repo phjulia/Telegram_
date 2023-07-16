@@ -31,8 +31,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "@fastify/cookie": "^8.3.0",
-    "@fastify/session": "^10.3.0",
+    "@fastify/cookie": "^6.0.0",
     "@fastify/static": "^6.10.2",
     "@salesforce-ux/design-system": "^2.20.1",
     "@salesforce/design-system-react": "^0.10.50",
@@ -46,6 +45,7 @@
     "express-session": "^1.17.3",
     "express-static": "^1.2.6",
     "fastify": "^3.29.5",
+    "fastify-session": "^5.2.1",
     "fastify-static": "^4.7.0",
     "fuel-auth": "^3.3.0",
     "local-storage": "^2.0.0",
