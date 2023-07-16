@@ -9,14 +9,13 @@ import Activity from "./Activity.jsx";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 console.log("in the index js");
 root.render(
-  <h1>Some title</h1>
   // <React.StrictMode>
   //   <Switch>
-  // <BrowserRouter>
-  //   <Routes>
-  //     <Route exact path="/telegram" component={Activity}></Route>
-  //   </Routes>
-  // </BrowserRouter>
+  <BrowserRouter>
+    <Routes>
+      <Route exact path="/telegram" component={Activity}></Route>
+    </Routes>
+  </BrowserRouter>
   /* </Switch>
     <Activity />
   </React.StrictMode> */

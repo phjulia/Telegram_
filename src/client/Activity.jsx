@@ -10,9 +10,10 @@ export class Activity extends Component {
   }
   render() {
     return (
-      <StepManager onSubmit={this.esd}>
-        <Step1></Step1>
-      </StepManager>
+      <h1>Activity component</h1>
+      // <StepManager onSubmit={this.esd}>
+      //   <Step1></Step1>
+      // </StepManager>
     );
   }
 }
