@@ -1,7 +1,7 @@
 const path = require("path");
 const fastify = require("fastify")({ logger: true });
 fastify.register(require("@fastify/cookie"));
-fastify.register(require("@fastify/session"), {
+fastify.register(require("fastify-session"), {
   secret:
     "D8L56czf9-_-Ctwh8wmCahqD_TDa5g52Qqw5RrSD-TyCBcOgJ6NiJ2KS_aU1yp7106IuYnanCryTfHC5AUuwBhF_4bGe7TStV9r3CBRvgro8nBDeQ9EPh62HKqn5hcezysxyF9sAa8lQd1T3-nKwYEslWDhlhYfmGWg7RLHXD4y9VLJY0fVlwKEdSAAf4ZiK6NdHR5Z-iriL5mqPA6oJ1l5_jRr7_g9PrMJORJnayV9O6MsJQJwjDf",
   maxAge: 1000 * 60 * 15,
