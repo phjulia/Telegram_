@@ -7,10 +7,12 @@ import Activity from "./Activity.jsx";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 console.log("in the index js");
 root.render(
-  <React.StrictMode>
-    <Switch>
-      <Route exact path="/telegram" component={Activity}></Route>
-    </Switch>
+  // <React.StrictMode>
+  //   <Switch>
+  <Router>
+    <Route exact path="/telegram" component={Activity}></Route>
+  </Router>
+  /* </Switch>
     <Activity />
-  </React.StrictMode>
+  </React.StrictMode> */
 );
