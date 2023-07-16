@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Step1 from "./steps/Step1.jsx";
 import esd from "../client/components/entrySourceDispatcher.js";
 import StepManager from "../client/StepManager.jsx";
+import Postmonger from "postmonger";
 
 const connection = new Postmonger.Session();
 export class Activity extends Component {
