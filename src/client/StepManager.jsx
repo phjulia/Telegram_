@@ -24,7 +24,7 @@ export class StepManager extends Component {
       (prevState) => {
         console.log("setting state in readyHandler");
       },
-      () => connection.trigger("ready")
+      () => connection.trigger("ready") //called any time there is a load betwene JB and Cust App(on IFrame load)
     );
   }
   componentDidUpdate() {
@@ -35,7 +35,7 @@ export class StepManager extends Component {
     //connection.on("initActivity", (data) => this.setState({ payload: data }));
     //connection.on("clickedNext", (data) => this.handleDone());
     //connection.on("clickedBack"..);
-    //connection.trigger("ready");
+    connection.trigger("ready");
     console.log("in componentDIdMount");
     /**----------------------------------------- */
     connection.on("requestedTokens", (data) => this.setState({ tokens: data }));
