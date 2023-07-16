@@ -13,8 +13,9 @@ root.render(
   //   <Route exact path="/telegram" element={<Activity />}></Route>
   //   <Route exact path="/" element={<Activity />}></Route>
   // </Switch>
-  <Routes>
-    <Route path="/" element={<Activity />} />
-    <Route path="/telegram" element={<Activity />} />
-  </Routes>
+  // <Routes>
+  //   <Route path="/" element={<Activity />} />
+  //   <Route path="/telegram" element={<Activity />} />
+  // </Routes>
+  <Activity />
 );
