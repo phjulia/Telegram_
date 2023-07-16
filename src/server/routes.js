@@ -32,7 +32,7 @@ module.exports = function (fastify, options, next) {
   });
   fastify.get("/telegram.png", (req, res) => {
     console.log("in telegram.png");
-    res.sendfile("telegram.png");
+    res.sendFile("telegram.png");
   });
   // fastify.get("/telegram/login", async (req, res) => {
   //   console.log("*****************LOGIN******************");
