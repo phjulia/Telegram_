@@ -8,75 +8,75 @@ const URL = require("url").URL;
 const URLSearchParams = require("url").URLSearchParams;
 
 module.exports = function (fastify, options, next) {
-  fastify.get("/telegram/config.json", (req, res) => {
+  fastify.get("/config.json", (req, res) => {
     console.log("test");
     const activityJSON = JSON.stringify(require("./config.json"));
     res.status(200).send(JSON.parse(activityJSON));
   });
-  fastify.post("/telegram/save", (req, res) => {
+  fastify.post("/save", (req, res) => {
     res.code(200).send({ success: true });
   });
-  fastify.get("/telegram/test", (req, res) => {
+  fastify.get("/test", (req, res) => {
     res.code(200).send({ success: true });
   });
   /**
    * @description A function that is called after journey has been validated
    */
-  fastify.post("/telegram/publish", (req, res) => {
+  fastify.post("/publish", (req, res) => {
     console.log("In the publish");
     res.code(200).send({ success: true });
   });
-  fastify.get("/telegram", (req, res) => {
-    console.log("in telegram");
-    res.send("OK");
-  });
-  fastify.get("/telegram.png", (req, res) => {
-    console.log("in telegram.png");
-    res.sendFile("telegram.png");
-  });
-  fastify.get("/telegram/login", async (req, res) => {
-    console.log("*****************LOGIN******************");
-    const tenant = "mcffrcsjyrj1cl3cgq5-96gnk041";
-    const u = new URL(
-      `https://${tenant}.auth.marketingcloudapis.com/v2/authorize`
-    );
-    const client_id = "m1babcd7qms023r8ngkt9mg2";
-    const random = randomStr.generate();
-    req.session.stateToken = random; //reduce the risk of cross-site forgery attack
-    //ls.backend(sessionStorage);
-    console.log("req session stateToken SESSION", req.session.stateToken);
-    console.log("req session  random", random);
-    u.search = new URLSearchParams({
-      response_type: "code",
-      client_id: client_id,
-      redirect_uri: `https://${req.hostname}/telegram/response`,
-      state: random,
-    });
-    console.log("u.toString: ", u.toString());
-    res.redirect(u.toString()); //TOFIX
-  });
-  fastify.get("/telegram/response", async (req, res) => {
-    const tenant = "mcffrcsjyrj1cl3cgq5-96gnk041";
-    const client_id = "m1babcd7qms023r8ngkt9mg2";
-    console.log("----------IN RESPONSE---------------");
-    console.log("req.query.stateToken SESSION-->", req.session.stateToken);
-    console.log("req.query.state-->", req.query.state);
+  // fastify.get("", (req, res) => {
+  //   console.log("in telegram");
+  //   res.send("OK");
+  // });
+  // fastify.get(".png", (req, res) => {
+  //   console.log("in telegram.png");
+  //   res.sendFile("telegram.png");
+  // });
+  // fastify.get("/login", async (req, res) => {
+  //   console.log("*****************LOGIN******************");
+  //   const tenant = "mcffrcsjyrj1cl3cgq5-96gnk041";
+  //   const u = new URL(
+  //     `https://${tenant}.auth.marketingcloudapis.com/v2/authorize`
+  //   );
+  //   const client_id = "m1babcd7qms023r8ngkt9mg2";
+  //   const random = randomStr.generate();
+  //   req.session.stateToken = random; //reduce the risk of cross-site forgery attack
+  //   //ls.backend(sessionStorage);
+  //   console.log("req session stateToken SESSION", req.session.stateToken);
+  //   console.log("req session  random", random);
+  //   u.search = new URLSearchParams({
+  //     response_type: "code",
+  //     client_id: client_id,
+  //     redirect_uri: `https://${req.hostname}/response`,
+  //     state: random,
+  //   });
+  //   console.log("u.toString: ", u.toString());
+  //   res.redirect(u.toString()); //TOFIX
+  // });
+  // fastify.get("/response", async (req, res) => {
+  //   const tenant = "mcffrcsjyrj1cl3cgq5-96gnk041";
+  //   const client_id = "m1babcd7qms023r8ngkt9mg2";
+  //   console.log("----------IN RESPONSE---------------");
+  //   console.log("req.query.stateToken SESSION-->", req.session.stateToken);
+  //   console.log("req.query.state-->", req.query.state);
 
-    if (req.session.stateToken == req.query.state) {
-      console.log("-------------inside IF");
-      req.session.token = await getToken(
-        req,
-        `https://telegram-6-79bd05dd5fd2.herokuapp.com/response`,
-        client_id,
-        tenant
-      );
-      console.log("req.session.token", req.session.token);
-      req.session.userInfo = await getUserInfo(req.session.token, tenant);
-      //console.log("req.session.userInfo", req.session.userInfo);
-    }
-    //get user and mid etc
-    res.redirect("https://telegram-6-79bd05dd5fd2.herokuapp.com/telegram");
-  });
+  //   if (req.session.stateToken == req.query.state) {
+  //     console.log("-------------inside IF");
+  //     req.session.token = await getToken(
+  //       req,
+  //       `https://telegram-6-79bd05dd5fd2.herokuapp.com/response`,
+  //       client_id,
+  //       tenant
+  //     );
+  //     console.log("req.session.token", req.session.token);
+  //     req.session.userInfo = await getUserInfo(req.session.token, tenant);
+  //     //console.log("req.session.userInfo", req.session.userInfo);
+  //   }
+  //   //get user and mid etc
+  //   res.redirect("https://telegram-6-79bd05dd5fd2.herokuapp.com/");
+  // });
   fastify.get("/", (req, res) => {
     console.log("/");
     res.sendFile("index.html");
@@ -94,9 +94,7 @@ module.exports = function (fastify, options, next) {
    */
   fastify.get("/edit", (req, res) => {
     console.log("----------------------EDIT-------------------");
-    const u = new URL(
-      "https://telegram-6-79bd05dd5fd2.herokuapp.com/telegram/login"
-    );
+    const u = new URL("https://telegram-6-79bd05dd5fd2.herokuapp.com/");
     res.redirect(u.toString());
   });
   /**
