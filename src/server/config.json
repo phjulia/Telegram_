@@ -2,7 +2,7 @@
     "workflowApiVersion": "1.1",
     "metaData": {
         "version": "2.0",
-        "icon": "https://telegram-6-79bd05dd5fd2.herokuapp.com/images/telegram.png",
+        "icon": "images/telegram.png",
         "expressionBuilderPrefix": "Custom",
         "category": "message"
     },
