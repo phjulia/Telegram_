@@ -26,10 +26,10 @@ module.exports = function (fastify, options, next) {
     console.log("In the publish");
     res.code(200).send({ success: true });
   });
-  // fastify.get("", (req, res) => {
-  //   console.log("in telegram");
-  //   res.send("OK");
-  // });
+  fastify.get("/images/telegram.png", (req, res) => {
+    console.log("in telegram");
+    res.sendFile("telegram.png");
+  });
   // fastify.get(".png", (req, res) => {
   //   console.log("in telegram.png");
   //   res.sendFile("telegram.png");
