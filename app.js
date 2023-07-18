@@ -12,9 +12,9 @@ fastify.register(require("fastify-session"), {
 });
 // app.register(require("./src/server/api"));
 // fastify.register(require("./src/server/api.js"));
-// fastify.register(require("fastify-static"), {
-//   root: path.join(__dirname, "dist"),
-// });
+fastify.register(require("fastify-static"), {
+  root: path.join(__dirname, "dist"),
+});
 console.log(" path.join(__dirname, 'public')", path.join(__dirname, "public"));
 fastify.register(require("./src/server/routes.js"));
 // app.use(
