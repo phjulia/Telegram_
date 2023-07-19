@@ -5,14 +5,20 @@ module.exports = function (fastify, options, next) {
    * Get Schema definition from Marketing Cloud
    */
   fastify.get("/getSchema", async (req, res) => {
-    // const schema = await fetch("/hub/v1/contacts/schema/", {
-    //   method: "GET",
-    //   headers: {
-    //     Autorization: `Bearer ${req.session.userInfo.Bearer}`,
-    //     "Content-Type": "application/json",
-    //   },
-    // });
-    console.log("Request session user INFO", req.session.userInfo);
+    console.log("req.session", req.session);
+    console.log("req.session.userInfo", req.session.userInfo);
+    const schema = await fetch(
+      "https://mcdlk9gw05l2xf8vc9l95hqttky4.rest.marketingcloudapis.com/hub/v1/contacts/schema/",
+      {
+        method: "GET",
+        headers: {
+          Autorization: `Bearer ${req.session.userInfo.Bearer}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    console.log("schema");
+    console.log(schema);
     return "test";
   });
 

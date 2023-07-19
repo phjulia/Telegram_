@@ -1,7 +1,7 @@
 {
     "workflowApiVersion": "1.1",
     "metaData": {
-        "icon": "images/open.png",
+        "icon": "images/telegram.png",
         "category": "message"
     },
     "type": "REST",

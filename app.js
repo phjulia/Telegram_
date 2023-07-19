@@ -17,6 +17,7 @@ fastify.register(require("fastify-static"), {
 });
 console.log(" path.join(__dirname, 'public')", path.join(__dirname, "public"));
 fastify.register(require("./src/server/routes.js"));
+fastify.register(require("./src/server/api.js"));
 // app.use(
 //   session({
 //     //secret:"D8L56czf9-_-Ctwh8wmCahqD_TDa5g52Qqw5RrSD-TyCBcOgJ6NiJ2KS_aU1yp7106IuYnanCryTfHC5AUuwBhF_4bGe7TStV9r3CBRvgro8nBDeQ9EPh62HKqn5hcezysxyF9sAa8lQd1T3-nKwYEslWDhlhYfmGWg7RLHXD4y9VLJY0fVlwKEdSAAf4ZiK6NdHR5Z-iriL5mqPA6oJ1l5_jRr7_g9PrMJORJnayV9O6MsJQJwjDfjin7Aokg2",
