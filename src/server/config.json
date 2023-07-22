@@ -18,7 +18,7 @@
         "execute": {
             "inArguments": [],
             "outArguments": [],
-            "url": "https://telegram-6-79bd05dd5fd2.herokuapp.com/execute",
+            "url": "https://telegram1-yulialikhitska.b4a.run/execute",
             "verb": "POST",
             "body": "",
             "header": "",
@@ -31,27 +31,27 @@
     "configurationArguments": {
         "applicationExtensionKey": "Test_Telegram",
         "save": {
-            "url": "https://telegram-6-79bd05dd5fd2.herokuapp.com/save",
+            "url": "https://telegram1-yulialikhitska.b4a.run/save",
             "body": "",
             "verb": "POST",
             "useJwt": true,
             "customerKey": "D8L56czf9-_-Ctwh8wmCahqD_TDa5g52Qqw5RrSD-TyCBcOgJ6NiJ2KS_aU1yp7106IuYnanCryTfHC5AUuwBhF_4bGe7TStV9r3CBRvgro8nBDeQ9EPh62HKqn5hcezysxyF9sAa8lQd1T3-nKwYEslWDhlhYfmGWg7RLHXD4y9VLJY0fVlwKEdSAAf4ZiK6NdHR5Z-iriL5mqPA6oJ1l5_jRr7_g9PrMJORJnayV9O6MsJQJwjDfjin7Aokg2"
         },
         "publish": {
-            "url": "https://telegram-6-79bd05dd5fd2.herokuapp.com/publish",
+            "url": "https://telegram1-yulialikhitska.b4a.run/publish",
             "verb": "POST",
             "body": "",
             "useJwt": true,
             "customerKey": "D8L56czf9-_-Ctwh8wmCahqD_TDa5g52Qqw5RrSD-TyCBcOgJ6NiJ2KS_aU1yp7106IuYnanCryTfHC5AUuwBhF_4bGe7TStV9r3CBRvgro8nBDeQ9EPh62HKqn5hcezysxyF9sAa8lQd1T3-nKwYEslWDhlhYfmGWg7RLHXD4y9VLJY0fVlwKEdSAAf4ZiK6NdHR5Z-iriL5mqPA6oJ1l5_jRr7_g9PrMJORJnayV9O6MsJQJwjDfjin7Aokg2"
         },
         "validate": {
-            "url": "https://telegram-6-79bd05dd5fd2.herokuapp.com/validate",
+            "url": "https://telegram1-yulialikhitska.b4a.run/validate",
             "useJwt": true,
             "customerKey": "D8L56czf9-_-Ctwh8wmCahqD_TDa5g52Qqw5RrSD-TyCBcOgJ6NiJ2KS_aU1yp7106IuYnanCryTfHC5AUuwBhF_4bGe7TStV9r3CBRvgro8nBDeQ9EPh62HKqn5hcezysxyF9sAa8lQd1T3-nKwYEslWDhlhYfmGWg7RLHXD4y9VLJY0fVlwKEdSAAf4ZiK6NdHR5Z-iriL5mqPA6oJ1l5_jRr7_g9PrMJORJnayV9O6MsJQJwjDfjin7Aokg2"
         }
     },
     "edit": {
-        "url": "https://telegram-6-79bd05dd5fd2.herokuapp.com/edit",
+        "url": "https://telegram1-yulialikhitska.b4a.run/edit",
         "height": 500,
         "width": 800
     }
