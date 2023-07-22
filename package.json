@@ -56,7 +56,6 @@
     "path": "^0.12.7",
     "postmonger": "^0.0.16",
     "randomstring": "^1.2.3",
-    "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.1",
     "style-loader": "^3.3.1",
