@@ -56,7 +56,7 @@ module.exports = function (fastify, options, next) {
       console.log("-------------inside IF");
       req.session.token = await getToken(
         req,
-        `https://telegram1-yulialikhitska.b4a.run/response`,
+        `https://telegram-6-79bd05dd5fd2.herokuapp.com/response`,
         client_id,
         tenant
       );
@@ -66,7 +66,7 @@ module.exports = function (fastify, options, next) {
       //console.log("req.session.userInfo", req.session.userInfo);
     }
     //   //get user and mid etc
-    res.redirect("https://telegram1-yulialikhitska.b4a.run/");
+    res.redirect("https://telegram-6-79bd05dd5fd2.herokuapp.com/");
   });
   fastify.get("/", (req, res) => {
     console.log("/");
@@ -87,14 +87,14 @@ module.exports = function (fastify, options, next) {
     console.log("----------------------EDIT-------------------");
     // req.session.token = await getToken(
     //   req,
-    //   `https://telegram1-yulialikhitska.b4a.run/response`,
+    //   `https://telegram-6-79bd05dd5fd2.herokuapp.com/response`,
     //   client_id,
     //   tenant
     // );
     // console.log("req.session.token", req.session.token);
     // req.session.userInfo = await getUserInfo(req.session.token, tenant);
-    //const u = new URL("https://telegram1-yulialikhitska.b4a.run/");
-    const u = new URL("https://telegram1-yulialikhitska.b4a.run/login");
+    //const u = new URL("https://telegram-6-79bd05dd5fd2.herokuapp.com/");
+    const u = new URL("https://telegram-6-79bd05dd5fd2.herokuapp.com/login");
     res.redirect(u.toString());
   });
   /**
@@ -115,7 +115,7 @@ module.exports = function (fastify, options, next) {
   fastify.get("/running", (req, res) => {
     console.log("in running");
     const u = new URL(
-      "https://telegram1-yulialikhitska.b4a.run/auth/login/activityRunning"
+      "https://telegram-6-79bd05dd5fd2.herokuapp.com/auth/login/activityRunning"
     );
     res.redirect(u.toString());
   });
