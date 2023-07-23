@@ -46,7 +46,7 @@ fastify.register(require("./src/server/api.js"));
 // app.use(require("./src/server/api"));
 const start = async () => {
   try {
-    await fastify.listen({ port: process.env.PORT, host: "0.0.0.0" });
+    await fastify.listen({ port: 3000, host: "0.0.0.0" });
     fastify.log.info(`server/server.js listening on ${process.env.PORT}`);
   } catch (ex) {
     fastify.log.error(ex);
