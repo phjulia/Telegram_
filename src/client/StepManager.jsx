@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Postmonger from "postmonger";
 import PropTypes from "prop-types";
-var connection = new Postmonger.Session();
+//var connection = new Postmonger.Session();
 
 export class StepManager extends Component {
   constructor(props) {
