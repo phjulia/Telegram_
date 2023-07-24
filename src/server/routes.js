@@ -14,6 +14,7 @@ module.exports = function (fastify, options, next) {
     res.status(200).send(JSON.parse(activityJSON));
   });
   fastify.post("/save", (req, res) => {
+    console.log("-------Saved");
     res.code(200).send({ success: true });
   });
   /**
@@ -56,7 +57,7 @@ module.exports = function (fastify, options, next) {
       console.log("-------------inside IF");
       req.session.token = await getToken(
         req,
-        `https://telegram1-yulialikhitska.b4a.run/response`,
+        `https://young-dream-1041.fly.dev/response`,
         client_id,
         tenant
       );
@@ -65,8 +66,8 @@ module.exports = function (fastify, options, next) {
 
       //console.log("req.session.userInfo", req.session.userInfo);
     }
-    //   //get user and mid etc
-    res.redirect("https://telegram1-yulialikhitska.b4a.run/");
+    //get user and mid etc
+    res.redirect("https://young-dream-1041.fly.dev/");
   });
   fastify.get("/", (req, res) => {
     console.log("/");
@@ -87,14 +88,14 @@ module.exports = function (fastify, options, next) {
     console.log("----------------------EDIT-------------------");
     // req.session.token = await getToken(
     //   req,
-    //   `https://telegram1-yulialikhitska.b4a.run/response`,
+    //   `https://young-dream-1041.fly.dev/response`,
     //   client_id,
     //   tenant
     // );
     // console.log("req.session.token", req.session.token);
     // req.session.userInfo = await getUserInfo(req.session.token, tenant);
-    //const u = new URL("https://telegram1-yulialikhitska.b4a.run/");
-    const u = new URL("https://telegram1-yulialikhitska.b4a.run/login");
+    //const u = new URL("https://young-dream-1041.fly.dev/");
+    const u = new URL("https://young-dream-1041.fly.dev/login");
     res.redirect(u.toString());
   });
   /**
@@ -115,7 +116,7 @@ module.exports = function (fastify, options, next) {
   fastify.get("/running", (req, res) => {
     console.log("in running");
     const u = new URL(
-      "https://telegram1-yulialikhitska.b4a.run/auth/login/activityRunning"
+      "https://young-dream-1041.fly.dev/auth/login/activityRunning"
     );
     res.redirect(u.toString());
   });
