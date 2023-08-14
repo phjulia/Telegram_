@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Step1 from "./steps/Step1.jsx";
+// import Step1 from "./steps/Step1.jsx";
 import esd from "../client/components/entrySourceDispatcher.js";
 import StepManager from "../client/StepManager.jsx";
 // import Postmonger from "postmonger";
@@ -18,9 +18,7 @@ export class Activity extends Component {
       // <>
       //   <h1>Activity component</h1>
       // </>
-      <StepManager onSubmit={this.esd}>
-        <Step1></Step1>
-      </StepManager>
+      <StepManager onSubmit={this.esd}/>
     );
   }
 }

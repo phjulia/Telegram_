@@ -2,6 +2,7 @@ const express = require("express");
 const handler = require("./handler");
 const bodyParser = require("body-parser");
 const ls = require("local-storage");
+const fetch = require("node-fetch");
 // const jsonParser = bodyParser.json();
 const randomStr = require("randomstring");
 const URL = require("url").URL;
@@ -105,6 +106,7 @@ module.exports = function (fastify, options, next) {
     console.log("in execute");
     console.log(req.body);
     handler.handleExecute(req, res);
+    res.code(200).send({ success: true });
   });
   fastify.post("/stop", (req, res) => {
     console.log("in stop");

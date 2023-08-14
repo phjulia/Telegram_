@@ -4,15 +4,20 @@ import PropTypes from "prop-types";
 import Icon from "@salesforce/design-system-react/components/icon";
 import { Card } from "@salesforce/design-system-react";
 import DataModelPicker from "../components/DataModelPicker";
+import Postmonger from "postmonger";
+var connection = new Postmonger.Session();
 
 class Step1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      message:{},
+      config:{},
       error: {},
     };
     // this.buttonHandler = this.buttonHandler.bind(this);
-    props.config.message = props.config.message || "";
+    //this.props.saveState=this.saveState.bind(this);
+    props.message = props.message || "";
     this.handleChange = this.handleChange.bind(this);
     //this.handleTextClick = this.handleTextClick.bind(this);
   }
@@ -23,9 +28,19 @@ class Step1 extends Component {
     console.log("in handleChange");
     console.log("this.props.config", this.props.config);
     console.log("e.target.value", e.target.value);
-    this.props.config.message = e.target.value;
+    this.props.message = e.target.value;
+    console.log("1:",this.props);
+    console.log("2:",this.props.message);
+    this.props.saveState(e.target.value);
     //this.props.configured = true;
   }
+/**
+ * @description set state after the component has been updated
+ */
+readyHandler() {
+  console.log("in readyHandler Step1");
+  connection.trigger("ready");
+}
   render() {
     return (
       <>

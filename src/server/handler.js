@@ -2,13 +2,15 @@
 // const jsonParser = bodyParser.json();
 const mysql = require("../helpers/db.js");
 const utils = require("../helpers/utils.js");
+const fetch = require("node-fetch");
 
-// const { subscribe } = require("./routes");
+// const { subscribe } = require("./routes");f
 
 module.exports = {
   async handleExecute(req, res) {
     const sf_id = req.body.keyValue;
     const payload = await utils.preparePayload(req);
+    console.log("** in handleExecute ", payload);
     await this.sendOutboundMessage(payload);
     this.sendSuccessfullResponse(req, res);
   },
