@@ -2,7 +2,7 @@ const express = require("express");
 const handler = require("./handler");
 const bodyParser = require("body-parser");
 const ls = require("local-storage");
-import fetch from "node-fetch";
+const fetch = require("node-fetch");
 // const jsonParser = bodyParser.json();
 const randomStr = require("randomstring");
 const URL = require("url").URL;

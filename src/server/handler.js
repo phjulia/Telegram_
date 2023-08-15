@@ -2,7 +2,7 @@
 // const jsonParser = bodyParser.json();
 const mysql = require("../helpers/db.js");
 const utils = require("../helpers/utils.js");
-import fetch from "node-fetch";
+const fetch = require("node-fetch");
 
 // const { subscribe } = require("./routes");f
 
