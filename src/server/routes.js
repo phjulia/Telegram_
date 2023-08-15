@@ -93,8 +93,8 @@ module.exports = function (fastify, options, next) {
    * @description A function that is called on journey activation
    */
   fastify.post("/execute", (req, res) => {
-    console.log("in execute");
-    console.log(req.body);
+    console.log("*****************************************in execute");
+    //console.log(req.body);
     handler.handleExecute(req, res);
     res.code(200).send({ success: true });
   });

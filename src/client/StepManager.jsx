@@ -6,7 +6,6 @@ var connection = new Postmonger.Session();
 export class StepManager extends Component {
   constructor(props) {
     super(props);
-    console.log("children", this.props.children);
     this.state = {
       payload: {
         metadata: {
@@ -38,7 +37,7 @@ export class StepManager extends Component {
         message: m,
       },
     });
-    console.log("this.state.data: ", this.state.data);
+    // console.log("this.state.data: ", this.state.data);
   }
   /**
    * @description set state after the component has been updated
@@ -132,7 +131,7 @@ export class StepManager extends Component {
         prevState.payload.arguments.inArguments = [
           { message: this.state.data.message },
         ];
-        console.log("Payload: ", prevState.payload);
+        // console.log("Payload: ", prevState.payload);
         connection.trigger("updateActivity", prevState.payload);
       },
       () => connection.trigger("ready")
@@ -153,7 +152,7 @@ export class StepManager extends Component {
     // );
   }
   render() {
-    console.log("this.props.Children", this.props.children);
+    // console.log("this.props.Children", this.props.children);
     return (
       <div
         style={{ padding: "1.5rem 1rem 0px", background: "rgb(244, 246, 249)" }}

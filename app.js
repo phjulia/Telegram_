@@ -15,7 +15,6 @@ fastify.register(require("fastify-session"), {
 fastify.register(require("fastify-static"), {
   root: path.join(__dirname, "dist"),
 });
-console.log(" path.join(__dirname, 'public')", path.join(__dirname, "public"));
 fastify.register(require("./src/server/routes.js"));
 fastify.register(require("./src/server/api.js"));
 // app.use(
