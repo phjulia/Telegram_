@@ -128,7 +128,7 @@ const getUserInfo = async (token, tenant) => {
       }
     );
     const userInfo = await userInfoReq.json();
-    console.log("result of getUserInfo: ", userInfo);
+    //console.log("result of getUserInfo: ", userInfo);
     return userInfo;
   } catch (ex) {
     console.error("auth/getToken Failed to get user info from MC", ex);
