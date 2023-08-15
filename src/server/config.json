@@ -1,12 +1,12 @@
 {
     "workflowApiVersion": "1.1",
     "metaData": {
-        "version":"2.0",
-        "name":"Telegram",
-        "icon": "https://young-dream-1041.fly.dev/images/telegram.png",
+        "version": "2.0",
+        "name": "Telegram",
+        "icon": "https://telegram1-ijl4.onrender.com/images/telegram.png",
         "category": "message",
-        "expressionBuilderPrefix":"Custom",
-        "isConfigured":true
+        "expressionBuilderPrefix": "Custom",
+        "isConfigured": true
     },
     "type": "REST",
     "lang": {
@@ -22,7 +22,7 @@
         "execute": {
             "inArguments": [],
             "outArguments": [],
-            "url": "https://young-dream-1041.fly.dev/execute",
+            "url": "https://telegram1-ijl4.onrender.com/execute",
             "verb": "POST",
             "body": "",
             "header": "",
@@ -35,30 +35,30 @@
     "configurationArguments": {
         "applicationExtensionKey": "Test_Telegram",
         "save": {
-            "url": "https://young-dream-1041.fly.dev/save",
+            "url": "https://telegram1-ijl4.onrender.com/save",
             "body": "",
             "verb": "POST",
             "useJwt": true,
             "customerKey": "D8L56czf9-_-Ctwh8wmCahqD_TDa5g52Qqw5RrSD-TyCBcOgJ6NiJ2KS_aU1yp7106IuYnanCryTfHC5AUuwBhF_4bGe7TStV9r3CBRvgro8nBDeQ9EPh62HKqn5hcezysxyF9sAa8lQd1T3-nKwYEslWDhlhYfmGWg7RLHXD4y9VLJY0fVlwKEdSAAf4ZiK6NdHR5Z-iriL5mqPA6oJ1l5_jRr7_g9PrMJORJnayV9O6MsJQJwjDfjin7Aokg2"
         },
         "publish": {
-            "url": "https://young-dream-1041.fly.dev/publish",
+            "url": "https://telegram1-ijl4.onrender.com/publish",
             "verb": "POST",
             "body": "",
             "useJwt": true,
             "customerKey": "D8L56czf9-_-Ctwh8wmCahqD_TDa5g52Qqw5RrSD-TyCBcOgJ6NiJ2KS_aU1yp7106IuYnanCryTfHC5AUuwBhF_4bGe7TStV9r3CBRvgro8nBDeQ9EPh62HKqn5hcezysxyF9sAa8lQd1T3-nKwYEslWDhlhYfmGWg7RLHXD4y9VLJY0fVlwKEdSAAf4ZiK6NdHR5Z-iriL5mqPA6oJ1l5_jRr7_g9PrMJORJnayV9O6MsJQJwjDfjin7Aokg2"
         },
         "validate": {
-            "url": "https://young-dream-1041.fly.dev/validate",
+            "url": "https://telegram1-ijl4.onrender.com/validate",
             "useJwt": true,
-            "verb":"POST",
-            "header":"",
-            "body":"",
+            "verb": "POST",
+            "header": "",
+            "body": "",
             "customerKey": "D8L56czf9-_-Ctwh8wmCahqD_TDa5g52Qqw5RrSD-TyCBcOgJ6NiJ2KS_aU1yp7106IuYnanCryTfHC5AUuwBhF_4bGe7TStV9r3CBRvgro8nBDeQ9EPh62HKqn5hcezysxyF9sAa8lQd1T3-nKwYEslWDhlhYfmGWg7RLHXD4y9VLJY0fVlwKEdSAAf4ZiK6NdHR5Z-iriL5mqPA6oJ1l5_jRr7_g9PrMJORJnayV9O6MsJQJwjDfjin7Aokg2"
         }
     },
     "edit": {
-        "url": "https://young-dream-1041.fly.dev/edit",
+        "url": "https://telegram1-ijl4.onrender.com/edit",
         "height": 500,
         "width": 800
     }
