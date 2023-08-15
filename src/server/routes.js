@@ -79,7 +79,7 @@ module.exports = function (fastify, options, next) {
    */
   fastify.post("/execute", (req, res) => {
     console.log("*****************************************in execute");
-    handler.handleExecute(req, res);
+    //handler.handleExecute(req, res);
     res.code(200).send({ success: true });
   });
   fastify.post("/stop", (req, res) => {
