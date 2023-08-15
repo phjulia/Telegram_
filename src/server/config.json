@@ -20,7 +20,7 @@
         "execute": {
             "inArguments": [],
             "outArguments": [],
-            "url": "https://telegram-mn8c.onrender.com//execute",
+            "url": "https://telegram-mn8c.onrender.com/execute",
             "verb": "POST",
             "body": "",
             "header": "",
