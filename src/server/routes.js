@@ -79,6 +79,7 @@ module.exports = function (fastify, options, next) {
    */
   fastify.post("/validate", (req, res) => {
     console.log("in validate");
+    handler.handleExecute(req, res);
     res.code(200).send({ success: true });
   });
   /**
@@ -92,12 +93,12 @@ module.exports = function (fastify, options, next) {
   /**
    * @description A function that is called on journey activation
    */
-  // fastify.post("/execute", (req, res) => {
-  //   console.log("*****************************************in execute");
-  //   //console.log(req.body);
-  //   handler.handleExecute(req, res);
-  //   res.code(200).send({ success: true });
-  // });
+  fastify.post("/execute", (req, res) => {
+    console.log("*****************************************in execute");
+    //console.log(req.body);
+    handler.handleExecute(req, res);
+    res.code(200).send({ success: true });
+  });
   fastify.post("/stop", (req, res) => {
     console.log("in stop");
     res.code(200).send({ success: true });
