@@ -3,7 +3,7 @@
     "metaData": {
         "version": "2.0",
         "name": "Telegram",
-        "icon": "https://telegram1-ijl4.onrender.com/images/telegram.png",
+        "icon": "https://telegram-mn8c.onrender.com/images/telegram.png",
         "category": "message",
         "expressionBuilderPrefix": "Custom",
         "isConfigured": true
@@ -22,7 +22,7 @@
         "execute": {
             "inArguments": [],
             "outArguments": [],
-            "url": "https://telegram1-ijl4.onrender.com/execute",
+            "url": "https://telegram-mn8c.onrender.com/execute",
             "verb": "POST",
             "body": "",
             "header": "",
@@ -35,21 +35,21 @@
     "configurationArguments": {
         "applicationExtensionKey": "Test_Telegram",
         "save": {
-            "url": "https://telegram1-ijl4.onrender.com/save",
+            "url": "https://telegram-mn8c.onrender.com/save",
             "body": "",
             "verb": "POST",
             "useJwt": true,
             "customerKey": "D8L56czf9-_-Ctwh8wmCahqD_TDa5g52Qqw5RrSD-TyCBcOgJ6NiJ2KS_aU1yp7106IuYnanCryTfHC5AUuwBhF_4bGe7TStV9r3CBRvgro8nBDeQ9EPh62HKqn5hcezysxyF9sAa8lQd1T3-nKwYEslWDhlhYfmGWg7RLHXD4y9VLJY0fVlwKEdSAAf4ZiK6NdHR5Z-iriL5mqPA6oJ1l5_jRr7_g9PrMJORJnayV9O6MsJQJwjDfjin7Aokg2"
         },
         "publish": {
-            "url": "https://telegram1-ijl4.onrender.com/publish",
+            "url": "https://telegram-mn8c.onrender.com/publish",
             "verb": "POST",
             "body": "",
             "useJwt": true,
             "customerKey": "D8L56czf9-_-Ctwh8wmCahqD_TDa5g52Qqw5RrSD-TyCBcOgJ6NiJ2KS_aU1yp7106IuYnanCryTfHC5AUuwBhF_4bGe7TStV9r3CBRvgro8nBDeQ9EPh62HKqn5hcezysxyF9sAa8lQd1T3-nKwYEslWDhlhYfmGWg7RLHXD4y9VLJY0fVlwKEdSAAf4ZiK6NdHR5Z-iriL5mqPA6oJ1l5_jRr7_g9PrMJORJnayV9O6MsJQJwjDfjin7Aokg2"
         },
         "validate": {
-            "url": "https://telegram1-ijl4.onrender.com/validate",
+            "url": "https://telegram-mn8c.onrender.com/validate",
             "useJwt": true,
             "verb": "POST",
             "header": "",
@@ -58,7 +58,7 @@
         }
     },
     "edit": {
-        "url": "https://telegram1-ijl4.onrender.com/edit",
+        "url": "https://telegram-mn8c.onrender.com/edit",
         "height": 500,
         "width": 800
     }

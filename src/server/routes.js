@@ -58,7 +58,7 @@ module.exports = function (fastify, options, next) {
       console.log("-------------inside IF");
       req.session.token = await getToken(
         req,
-        `https://telegram1-ijl4.onrender.com/response`,
+        `https://telegram-mn8c.onrender.com/response`,
         client_id,
         tenant
       );
@@ -68,7 +68,7 @@ module.exports = function (fastify, options, next) {
       //console.log("req.session.userInfo", req.session.userInfo);
     }
     //get user and mid etc
-    res.redirect("https://telegram1-ijl4.onrender.com/");
+    res.redirect("https://telegram-mn8c.onrender.com/");
   });
   fastify.get("/", (req, res) => {
     console.log("/");
@@ -89,14 +89,14 @@ module.exports = function (fastify, options, next) {
     console.log("----------------------EDIT-------------------");
     // req.session.token = await getToken(
     //   req,
-    //   `https://telegram1-ijl4.onrender.com/response`,
+    //   `https://telegram-mn8c.onrender.com/response`,
     //   client_id,
     //   tenant
     // );
     // console.log("req.session.token", req.session.token);
     // req.session.userInfo = await getUserInfo(req.session.token, tenant);
-    //const u = new URL("https://telegram1-ijl4.onrender.com/");
-    const u = new URL("https://telegram1-ijl4.onrender.com/login");
+    //const u = new URL("https://telegram-mn8c.onrender.com/");
+    const u = new URL("https://telegram-mn8c.onrender.com/login");
     res.redirect(u.toString());
   });
   /**
@@ -118,7 +118,7 @@ module.exports = function (fastify, options, next) {
   fastify.get("/running", (req, res) => {
     console.log("in running");
     const u = new URL(
-      "https://telegram1-ijl4.onrender.com/auth/login/activityRunning"
+      "https://telegram-mn8c.onrender.com/auth/login/activityRunning"
     );
     res.redirect(u.toString());
   });
