@@ -86,15 +86,6 @@ module.exports = function (fastify, options, next) {
    */
   fastify.get("/edit", async (req, res) => {
     console.log("----------------------EDIT-------------------");
-    // req.session.token = await getToken(
-    //   req,
-    //   `https://telegram-mn8c.onrender.com/response`,
-    //   client_id,
-    //   tenant
-    // );
-    // console.log("req.session.token", req.session.token);
-    // req.session.userInfo = await getUserInfo(req.session.token, tenant);
-    //const u = new URL("https://telegram-mn8c.onrender.com/");
     const u = new URL("https://telegram-mn8c.onrender.com/login");
     res.redirect(u.toString());
   });
@@ -126,7 +117,7 @@ module.exports = function (fastify, options, next) {
 };
 const getUserInfo = async (token, tenant) => {
   try {
-    return await fetch(
+    const userInfoReq = await fetch(
       `https://${tenant}.auth.marketingcloudapis.com/v2/userinfo`,
       {
         method: "GET",
@@ -135,10 +126,10 @@ const getUserInfo = async (token, tenant) => {
           Authorization: `Bearer ${token}`,
         },
       }
-    ).then((result) => {
-      console.log("result of getUserInfo: ", result.json());
-      return result.json();
-    });
+    );
+    const userInfo = await userInfoReq.json();
+    console.log("result of getUserInfo: ", userInfo);
+    return userInfo;
   } catch (ex) {
     console.error("auth/getToken Failed to get user info from MC", ex);
   }
