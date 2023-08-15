@@ -4,11 +4,7 @@
  * @return {object} payload updated for saving to journey builder
  */
 module.exports = function (state) {
-  console.log(state);
   const payload = state.payload;
-  console.log("in entrySourceDispatcher");
-  console.log(state);
-  //console.log("payload.metadata.version", payload.metadata.version);
   payload.arguments.execute.inArguments = [
     {
       //version: payload.metadata.version,

@@ -10,7 +10,6 @@ module.exports = {
   async preparePayload(req) {
     const sf_id = req.body.keyValue;
     const user_id = await db.getUserId(sf_id);
-    console.log(req.body.data.message);
     const message = req.body.data.message;
     //const message = req.body.inArguments[0].config.message;
     req.body.return[(user_id, message)];

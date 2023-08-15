@@ -30,29 +30,22 @@ export class StepManager extends Component {
     this.handleDone = this.handleDone.bind(this);
   }
   saveState(m) {
-    //console.log('in save state',message);
     this.setState({
-      //console.log("in save state:",state);
       data: {
         message: m,
       },
     });
-    // console.log("this.state.data: ", this.state.data);
   }
   /**
    * @description set state after the component has been updated
    */
   readyHandler() {
-    console.log("in readyHandler");
     this.setState(
-      (prevState) => {
-        console.log("setting state in readyHandler");
-      },
+      (prevState) => {},
       () => connection.trigger("ready") //called any time there is a load betwene JB and Cust App(on IFrame load)
     );
   }
   componentDidUpdate() {
-    console.log("in componentDidUpdate");
     this.readyHandler();
   }
   componentDidMount() {
@@ -60,7 +53,6 @@ export class StepManager extends Component {
     //connection.on("clickedNext", (data) => this.handleDone());
     //connection.on("clickedBack"..);
     connection.trigger("ready");
-    console.log("in componentDIdMount");
     /**----------------------------------------- */
     connection.on("requestedTokens", (data) => this.setState({ tokens: data }));
     connection.on("requestedCulture", (data) =>
@@ -70,7 +62,6 @@ export class StepManager extends Component {
       this.setState({ endpoints: data })
     );
     connection.on("initActivity", (data) => {
-      console.log("init: ", this.state);
       if (data) {
         this.setState({
           payload: data,
@@ -90,7 +81,6 @@ export class StepManager extends Component {
         },
         type: "activity",
       });
-      console.log("init set payload: ", this.state.payload);
     });
     connection.on("initActivityRunningHover", (data) =>
       this.setState({ payload: data, type: "activityHover" })
@@ -118,20 +108,12 @@ export class StepManager extends Component {
     connection.trigger("requestInteraction");
   }
   handleDone(data) {
-    console.log("in done-1");
-    console.log("Data:", data);
-    console.log("props message", this.state.data.message);
     this.setState(
       (prevState) => {
-        // prevState.payload.metaData.isConfigured = true;
-        // //prevState.payload = this.props.onSubmit(prevState);
-
-        //  prevState.configured =
         prevState.payload.metaData.isConfigured = true;
         prevState.payload.arguments.inArguments = [
           { message: this.state.data.message },
         ];
-        // console.log("Payload: ", prevState.payload);
         connection.trigger("updateActivity", prevState.payload);
       },
       () => connection.trigger("ready")
@@ -152,7 +134,6 @@ export class StepManager extends Component {
     // );
   }
   render() {
-    // console.log("this.props.Children", this.props.children);
     return (
       <div
         style={{ padding: "1.5rem 1rem 0px", background: "rgb(244, 246, 249)" }}

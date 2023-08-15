@@ -35,9 +35,7 @@ module.exports = {
         unpackUser(userData)
       )
       .then(() => console.log("Success!"))
-      .catch((err) => {
-        console.error("An error has occured: " + err.message);
-      });
+      .catch((err) => {});
     //.then(db.end());
   },
 };

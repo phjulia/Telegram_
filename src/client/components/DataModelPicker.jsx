@@ -30,12 +30,10 @@ class DataModelPicker extends Component {
   async componentDidMount() {
     //const schema = await this.getSchema();
   }
-  async getSchema() {
-    console.log("---------------IN GET SCHEMA-------------");
-    //const schema = await fetch("/getSchema");
-    //console.log(schema);
-    return schema;
-  }
+  // async getSchema() {
+  //const schema = await fetch("/getSchema");
+  //   return schema;
+  // }
   getNodes = (node) =>
     node.nodes ? node.nodes.map((id) => this.state.nodes[id]) : [];
 

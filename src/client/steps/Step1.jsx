@@ -11,8 +11,8 @@ class Step1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      message:{},
-      config:{},
+      message: {},
+      config: {},
       error: {},
     };
     // this.buttonHandler = this.buttonHandler.bind(this);
@@ -21,26 +21,18 @@ class Step1 extends Component {
     this.handleChange = this.handleChange.bind(this);
     //this.handleTextClick = this.handleTextClick.bind(this);
   }
-  onClick() {
-    console.log("in onclick");
-  }
+  onClick() {}
   handleChange(e) {
-    console.log("in handleChange");
-    console.log("this.props.config", this.props.config);
-    console.log("e.target.value", e.target.value);
     this.props.message = e.target.value;
-    console.log("1:",this.props);
-    console.log("2:",this.props.message);
     this.props.saveState(e.target.value);
     //this.props.configured = true;
   }
-/**
- * @description set state after the component has been updated
- */
-readyHandler() {
-  console.log("in readyHandler Step1");
-  connection.trigger("ready");
-}
+  /**
+   * @description set state after the component has been updated
+   */
+  readyHandler() {
+    connection.trigger("ready");
+  }
   render() {
     return (
       <>

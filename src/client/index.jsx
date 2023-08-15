@@ -7,15 +7,4 @@ import Activity from "./Activity";
 import { Route, Routes, Switch, BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// console.log("in the index js");
-root.render(
-  // <Switch>
-  //   <Route exact path="/telegram" element={<Activity />}></Route>
-  //   <Route exact path="/" element={<Activity />}></Route>
-  // </Switch>
-  // <Routes>
-  //   <Route path="/" element={<Activity />} />
-  //   <Route path="/telegram" element={<Activity />} />
-  // </Routes>
-  <Activity />
-);
+root.render(<Activity />);

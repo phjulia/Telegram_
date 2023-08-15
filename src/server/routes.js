@@ -14,7 +14,6 @@ module.exports = function (fastify, options, next) {
     res.status(200).send(JSON.parse(activityJSON));
   });
   fastify.post("/save", (req, res) => {
-    console.log("-------Saved");
     res.code(200).send({ success: true });
   });
   /**
@@ -25,7 +24,6 @@ module.exports = function (fastify, options, next) {
     res.code(200).send({ success: true });
   });
   fastify.get("/login", async (req, res) => {
-    console.log("*****************LOGIN******************");
     const tenant = "mcdlk9gw05l2xf8vc9l95hqttky4";
     const u = new URL(
       `https://${tenant}.auth.marketingcloudapis.com/v2/authorize`
@@ -34,43 +32,31 @@ module.exports = function (fastify, options, next) {
     const random = randomStr.generate();
     req.session.stateToken = random; //reduce the risk of cross-site forgery attack
     //ls.backend(sessionStorage);
-    console.log("req session stateToken SESSION", req.session.stateToken);
-    console.log("req session  random", random);
-    console.log("req.hostname", req.hostname);
     u.search = new URLSearchParams({
       response_type: "code",
       client_id: client_id,
       redirect_uri: `https://${req.hostname}/response`,
       state: random,
     });
-    console.log("u.toString: ", u.toString());
-    res.redirect(u.toString()); //TOFIX
+    res.redirect(u.toString());
   });
   fastify.get("/response", async (req, res) => {
     const tenant = "mcdlk9gw05l2xf8vc9l95hqttky4";
     const client_id = "chdjz4dmxn7upfelzxecyy6q";
-    console.log("----------IN RESPONSE---------------");
-    console.log("req.query.stateToken SESSION-->", req.session.stateToken);
-    console.log("req.query.state-->", req.query.state);
 
     if (req.session.stateToken == req.query.state) {
-      console.log("-------------inside IF");
       req.session.token = await getToken(
         req,
         `https://telegram-mn8c.onrender.com/response`,
         client_id,
         tenant
       );
-      console.log("req.session.token", req.session.token);
       req.session.userInfo = await getUserInfo(req.session.token, tenant);
-
-      //console.log("req.session.userInfo", req.session.userInfo);
     }
     //get user and mid etc
     res.redirect("https://telegram-mn8c.onrender.com/");
   });
   fastify.get("/", (req, res) => {
-    console.log("/");
     res.sendFile("index.html");
   });
 
@@ -78,7 +64,6 @@ module.exports = function (fastify, options, next) {
    * @description A function that is called on journey validation
    */
   fastify.post("/validate", (req, res) => {
-    console.log("in validate");
     handler.handleExecute(req, res);
     res.code(200).send({ success: true });
   });
@@ -86,7 +71,6 @@ module.exports = function (fastify, options, next) {
    * @description A function that is called on journey activation
    */
   fastify.get("/edit", async (req, res) => {
-    console.log("----------------------EDIT-------------------");
     const u = new URL("https://telegram-mn8c.onrender.com/login");
     res.redirect(u.toString());
   });
@@ -95,25 +79,18 @@ module.exports = function (fastify, options, next) {
    */
   fastify.post("/execute", (req, res) => {
     console.log("*****************************************in execute");
-    //console.log(req.body);
     handler.handleExecute(req, res);
     res.code(200).send({ success: true });
   });
   fastify.post("/stop", (req, res) => {
-    console.log("in stop");
     res.code(200).send({ success: true });
   });
-
-  //   res.redirect(u.toString());
-  // });
   fastify.get("/running", (req, res) => {
-    console.log("in running");
     const u = new URL(
       "https://telegram-mn8c.onrender.com/auth/login/activityRunning"
     );
     res.redirect(u.toString());
   });
-
   next();
 };
 const getUserInfo = async (token, tenant) => {
@@ -129,7 +106,6 @@ const getUserInfo = async (token, tenant) => {
       }
     );
     const userInfo = await userInfoReq.json();
-    //console.log("result of getUserInfo: ", userInfo);
     return userInfo;
   } catch (ex) {
     console.error("auth/getToken Failed to get user info from MC", ex);
@@ -152,9 +128,7 @@ const getToken = async (request, redirect_uri, client_id, tenant) => {
         }),
       }
     );
-    console.log("token-->", token);
     const json = await token.json();
-    console.log("json-->", json);
     return json.access_token;
   } catch (ex) {
     console.error(ex.message);

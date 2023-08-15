@@ -10,14 +10,12 @@ module.exports = {
   async handleExecute(req, res) {
     const sf_id = req.body.keyValue;
     const payload = await utils.preparePayload(req);
-    console.log("** in handleExecute ", payload);
     await this.sendOutboundMessage(payload);
     this.sendSuccessfullResponse(req, res);
   },
   async sendOutboundMessage(payload) {
     const [user_id, message] = payload;
     try {
-      console.log(user_id);
       const response = await this.sendMessage(user_id, message);
       //insert in db etc data extension
       return response;
@@ -34,13 +32,11 @@ module.exports = {
     let salesforceId;
     let bu;
     try {
-      console.log("req.body", req.body);
       userId = req.body.message.from.id;
       firstName = req.body.message.from.first_name;
       salesforceId = "test1";
       bu = "test2";
       const user = createNewUser(userId, firstName, salesforceId, bu);
-      console.log(user);
       //await mysql.addAppUser(user);
       const message = `Dear ${firstName}, welcome to Marketing Cloud bot ❤️!`;
       await this.sendMessage(userId, message);
@@ -75,7 +71,7 @@ module.exports = {
       if (responseJson.status != 0) throw new Error(response.message);
       else return responseJson;
     } catch (ex) {
-      console.log(ex);
+      console.error(ex);
       //log error
     }
 
@@ -86,7 +82,6 @@ module.exports = {
 
   async getPayload(request) {
     //request.body.inArguments[0].config.message
-    //console.log(request.)
   },
 };
 /**
