@@ -10,7 +10,6 @@ const URLSearchParams = require("url").URLSearchParams;
 
 module.exports = function (fastify, options, next) {
   fastify.get("/config.json", (req, res) => {
-    console.log("test");
     const activityJSON = JSON.stringify(require("./config.json"));
     res.status(200).send(JSON.parse(activityJSON));
   });
@@ -136,7 +135,10 @@ const getUserInfo = async (token, tenant) => {
           Authorization: `Bearer ${token}`,
         },
       }
-    ).then((result) => result.json());
+    ).then((result) => {
+      console.log("result of getUserInfo: ", result.json());
+      return result.json();
+    });
   } catch (ex) {
     console.error("auth/getToken Failed to get user info from MC", ex);
   }

@@ -8,21 +8,21 @@ export class StepManager extends Component {
     super(props);
     console.log("children", this.props.children);
     this.state = {
-      payload:{
-        metadata:{
-          isConfigured:false
+      payload: {
+        metadata: {
+          isConfigured: false,
         },
-        arguments:{
-          execute:{
-            inArguments:[
-        {
-          isConfigured:false
-        }
-      ],
-    }
-  }
-},
-      data: {message:""},
+        arguments: {
+          execute: {
+            inArguments: [
+              {
+                isConfigured: false,
+              },
+            ],
+          },
+        },
+      },
+      data: { message: "" },
       config: {},
     };
     //this.buttonHandler = this.buttonHandler.bind(this);
@@ -30,15 +30,15 @@ export class StepManager extends Component {
     this.readyHandler = this.readyHandler.bind(this);
     this.handleDone = this.handleDone.bind(this);
   }
-  saveState(m){
+  saveState(m) {
     //console.log('in save state',message);
     this.setState({
       //console.log("in save state:",state);
-      data:{
-        message:m
-      }
+      data: {
+        message: m,
+      },
     });
-    console.log("this.state.data: ",this.state.data);
+    console.log("this.state.data: ", this.state.data);
   }
   /**
    * @description set state after the component has been updated
@@ -70,30 +70,29 @@ export class StepManager extends Component {
     connection.on("requestedEndpoints", (data) =>
       this.setState({ endpoints: data })
     );
-    connection.on("initActivity", (data) =>{
-    console.log("init: ",this.state);
-    if(data){
+    connection.on("initActivity", (data) => {
+      console.log("init: ", this.state);
+      if (data) {
+        this.setState({
+          payload: data,
+          type: "activity",
+        });
+      }
       this.setState({
-        payload:data,type:"activity"
-      })
-    }
-    this.setState({
-      payload:{
-        metaData:{
-          isConfigured:false,
+        payload: {
+          metaData: {
+            isConfigured: false,
+          },
+          arguments: {
+            execute: {
+              inArguments: [],
+            },
+          },
         },
-        arguments:{
-          execute:{
-            inArguments:[
-      ],
-    }
-  }
-},
-      type:"activity"
+        type: "activity",
+      });
+      console.log("init set payload: ", this.state.payload);
     });
-      console.log("init set payload: ",this.state.payload);
-    }
-    );
     connection.on("initActivityRunningHover", (data) =>
       this.setState({ payload: data, type: "activityHover" })
     );
@@ -104,7 +103,7 @@ export class StepManager extends Component {
       this.setState({ schema: data.schema })
     );
     //connection.on("clickedNext", (data) => this.setState({data:}));
-     connection.on("clickedNext", (data) => this.handleDone(data));
+    connection.on("clickedNext", (data) => this.handleDone(data));
     connection.on("requestedInteraction", (data) =>
       this.setState({ interaction: data })
     );
@@ -121,23 +120,25 @@ export class StepManager extends Component {
   }
   handleDone(data) {
     console.log("in done-1");
-    console.log("Data:",data);
-    console.log("props message",this.state.data.message);
+    console.log("Data:", data);
+    console.log("props message", this.state.data.message);
     this.setState(
       (prevState) => {
         // prevState.payload.metaData.isConfigured = true;
         // //prevState.payload = this.props.onSubmit(prevState);
 
         //  prevState.configured =
-          prevState.payload.metaData.isConfigured=true;
-          prevState.payload.arguments.inArguments = [{message:this.state.data.message}];
-          console.log("Payload: ",prevState.payload);
+        prevState.payload.metaData.isConfigured = true;
+        prevState.payload.arguments.inArguments = [
+          { message: this.state.data.message },
+        ];
+        console.log("Payload: ", prevState.payload);
         connection.trigger("updateActivity", prevState.payload);
       },
       () => connection.trigger("ready")
     );
     //payload.metaData.isConfigured=true;
-    
+
     //connection.trigger("updateActivity",payload);
     // this.setState(
     //   (prevState) => {
@@ -153,14 +154,6 @@ export class StepManager extends Component {
   }
   render() {
     console.log("this.props.Children", this.props.children);
-    // console.log(React.Children.toArray(this.props.children)[0]);
-    // const renderThis = React.cloneElement(
-    //   React.Children.toArray(this.props.children)[0],
-    //   {
-    //     config: this.state.config,
-    //   }
-    // );
-    //return <h1>Test</h1>;
     return (
       <div
         style={{ padding: "1.5rem 1rem 0px", background: "rgb(244, 246, 249)" }}
