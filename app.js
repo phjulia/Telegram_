@@ -12,8 +12,9 @@ fastify.register(require("fastify-session"), {
 });
 // app.register(require("./src/server/api"));
 // fastify.register(require("./src/server/api.js"));
+console.log("serving files at: ", __dirname + "/public");
 fastify.register(require("fastify-static"), {
-  root: path.join(__dirname, "dist"),
+  root: path.join(__dirname, "public"),
 });
 fastify.register(require("./src/server/routes.js"));
 fastify.register(require("./src/server/api.js"));
@@ -37,12 +38,6 @@ fastify.register(require("./src/server/api.js"));
 //     saveUninitialized: false,
 //   })
 // );
-// app.use(express.static(path.join(__dirname, "./build")));
-// app.use(express.static("public"));
-//app.use(require("./src/server/authentication"), { prefix: "/authentication" });
-// app.use(bodyParser.json());
-// app.use(require("./src/server/routes"));
-// app.use(require("./src/server/api"));
 const start = async () => {
   try {
     await fastify.listen({ port: process.env.PORT, host: "0.0.0.0" });
