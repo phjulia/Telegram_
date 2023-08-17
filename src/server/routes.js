@@ -40,7 +40,7 @@ module.exports = function (fastify, options, next) {
       state: random,
     });
     res.redirect(u.toString());
-    res.redirect("https://telegram-mn8c.onrender.com/");
+    res.redirect("/");
   });
   fastify.get("/response", async (req, res) => {
     const tenant = "mcdlk9gw05l2xf8vc9l95hqttky4";
