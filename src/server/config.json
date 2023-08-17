@@ -2,7 +2,7 @@
     "workflowApiVersion": "1.1",
     "metaData": {
         "version": "2.0",
-        "icon": "public/telegram.png",
+        "icon": "src/public/telegram.png",
         "expressionBuilderPrefix": "Custom",
         "category": "messages"
     },
