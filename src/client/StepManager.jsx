@@ -93,8 +93,9 @@ export class StepManager extends Component {
       this.setState({ schema: data.schema })
     );
     //connection.on("clickedNext", (data) => this.setState({data:}));
-    connection.on("clickedNext", (data) => {
-      console.log("clickedNext", this.handleDone(data));
+    connection.on("clickedNext", async (data) => {
+      console.log("clickedNext");
+      await this.handleDone(data);
     });
     connection.on("requestedInteraction", (data) =>
       this.setState({ interaction: data })
@@ -110,7 +111,7 @@ export class StepManager extends Component {
     connection.trigger("requestSchema");
     connection.trigger("requestInteraction");
   }
-  handleDone(data) {
+  async handleDone(data) {
     console.log("Handle DONE");
     this.setState(
       (prevState) => {
@@ -119,11 +120,12 @@ export class StepManager extends Component {
           { message: this.state.data.message },
         ];
         connection.trigger("updateActivity", prevState.payload);
+        return prevState;
       },
       () => connection.trigger("ready")
     );
     console.log(this.state.payload.arguments.inArguments);
-    handler.sendOutboundMessage([1, "messgae"]);
+    await handler.sendOutboundMessage([1, "messgae"]);
     //payload.metaData.isConfigured=true;
 
     //connection.trigger("updateActivity",payload);
