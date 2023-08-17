@@ -122,8 +122,8 @@ export class StepManager extends Component {
       },
       () => connection.trigger("ready")
     );
-    console.log("this.state.payload", this.state.payload);
-    handler.handleExecute(req, res);
+    console.log(this.state.payload.arguments.inArguments);
+    handler.sendOutboundMessage([1, "messgae"]);
     //payload.metaData.isConfigured=true;
 
     //connection.trigger("updateActivity",payload);
