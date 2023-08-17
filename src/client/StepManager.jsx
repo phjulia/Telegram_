@@ -93,7 +93,9 @@ export class StepManager extends Component {
       this.setState({ schema: data.schema })
     );
     //connection.on("clickedNext", (data) => this.setState({data:}));
-    connection.on("clickedNext", (data) => this.handleDone(data));
+    connection.on("clickedNext", (data) => {
+      console.log("clickedNext", this.handleDone(data));
+    });
     connection.on("requestedInteraction", (data) =>
       this.setState({ interaction: data })
     );

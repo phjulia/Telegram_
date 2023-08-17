@@ -11,6 +11,7 @@ const URLSearchParams = require("url").URLSearchParams;
 module.exports = function (fastify, options, next) {
   fastify.get("/config.json", (req, res) => {
     const activityJSON = JSON.stringify(require("./config.json"));
+    console.log("activityJSON", activityJSON);
     res.status(200).send(JSON.parse(activityJSON));
   });
   fastify.post("/save", (req, res) => {
