@@ -31,8 +31,9 @@ module.exports = {
     extensions: ["*", ".js", ".jsx"],
   },
   output: {
+    path: path.join(__dirname, "public/activity/edit"),
     filename: "main.js",
-    path: "/activity/edit/",
+    publicPath: "/activity/edit/",
   },
   plugins: [
     new CleanWebpackPlugin(),
