@@ -54,7 +54,7 @@ module.exports = function (fastify, options, next) {
     //get user and mid etc
     res.redirect("https://telegram-mn8c.onrender.com/");
   });
-  fastify.get("https://telegram-mn8c.onrender.com/", (req, res) => {
+  fastify.get("/", (req, res) => {
     res.sendFile("index.html");
   });
 
