@@ -1,6 +1,6 @@
 // const bodyParser = require("body-parser");
 // const jsonParser = bodyParser.json();
-const mysql = require("../helpers/db.js");
+// const mysql = require("../helpers/db.js");
 const utils = require("../helpers/utils.js");
 const fetch = require("node-fetch");
 
