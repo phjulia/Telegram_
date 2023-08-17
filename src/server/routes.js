@@ -73,6 +73,7 @@ module.exports = function (fastify, options, next) {
    * @description A function that is called on journey activation
    */
   fastify.get("/edit", async (req, res) => {
+    console.log("in edit");
     const u = new URL("https://telegram-mn8c.onrender.com/login");
     res.redirect(u.toString());
   });
