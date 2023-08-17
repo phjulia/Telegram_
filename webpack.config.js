@@ -32,7 +32,7 @@ module.exports = {
   },
   output: {
     filename: "main.js",
-    // path: '/activity/edit/'
+    path: "/activity/edit/",
   },
   plugins: [
     new CleanWebpackPlugin(),
