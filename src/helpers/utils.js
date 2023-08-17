@@ -1,5 +1,5 @@
-const { getUser } = require("../helpers/db.js");
-const db = require("../helpers/db.js");
+// const { getUser } = require("../helpers/db.js");
+// const db = require("../helpers/db.js");
 
 module.exports = {
   /**
