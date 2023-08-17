@@ -30,17 +30,17 @@ module.exports = {
   resolve: {
     extensions: ["*", ".js", ".jsx"],
   },
-  output: {
-    path: path.join(__dirname, "public/activity/edit"),
-    filename: "main.js",
-    publicPath: "/activity/edit/",
-  },
+  // output: {
+  //   path: path.join(__dirname, "public/activity/edit"),
+  //   filename: "main.js",
+  //   publicPath: "/activity/edit/",
+  // },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, "server", "index.html"),
-      filename: "index.html",
-    }),
+    // new HtmlWebpackPlugin({
+    //   template: path.join(__dirname, "server", "index.html"),
+    //   filename: "index.html",
+    // }),
     // new HtmlWebpackPlugin({
     //   template: path.join(__dirname, "public", "index.html"),
     //   filename: "index.html",
