@@ -38,7 +38,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "index.html"),
+      template: path.join(__dirname, "server", "index.html"),
       filename: "index.html",
     }),
     // new HtmlWebpackPlugin({
