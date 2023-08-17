@@ -11,6 +11,7 @@ const URLSearchParams = require("url").URLSearchParams;
 module.exports = function (fastify, options, next) {
   fastify.get("/config.json", (req, res) => {
     const activityJSON = JSON.stringify(require("./config.json"));
+    console.log(activityJSON);
     res.status(200).send(JSON.parse(activityJSON));
   });
   fastify.post("/save", (req, res) => {
@@ -24,22 +25,21 @@ module.exports = function (fastify, options, next) {
     res.code(200).send({ success: true });
   });
   fastify.get("/login", async (req, res) => {
-    // const tenant = "mcdlk9gw05l2xf8vc9l95hqttky4";
-    // const u = new URL(
-    //   `https://${tenant}.auth.marketingcloudapis.com/v2/authorize`
-    // );
-    // const client_id = "chdjz4dmxn7upfelzxecyy6q";
-    // const random = randomStr.generate();
-    // req.session.stateToken = random; //reduce the risk of cross-site forgery attack
-    // //ls.backend(sessionStorage);
-    // u.search = new URLSearchParams({
-    //   response_type: "code",
-    //   client_id: client_id,
-    //   redirect_uri: `https://${req.hostname}/response`,
-    //   state: random,
-    // });
-    // res.redirect(u.toString());
-    res.redirect("https://telegram-mn8c.onrender.com/");
+    const tenant = "mcdlk9gw05l2xf8vc9l95hqttky4";
+    const u = new URL(
+      `https://${tenant}.auth.marketingcloudapis.com/v2/authorize`
+    );
+    const client_id = "chdjz4dmxn7upfelzxecyy6q";
+    const random = randomStr.generate();
+    req.session.stateToken = random; //reduce the risk of cross-site forgery attack
+    //ls.backend(sessionStorage);
+    u.search = new URLSearchParams({
+      response_type: "code",
+      client_id: client_id,
+      redirect_uri: `https://${req.hostname}/response`,
+      state: random,
+    });
+    res.redirect(u.toString());
   });
   fastify.get("/response", async (req, res) => {
     const tenant = "mcdlk9gw05l2xf8vc9l95hqttky4";
