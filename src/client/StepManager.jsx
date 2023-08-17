@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Postmonger from "postmonger";
 import PropTypes from "prop-types";
 import Step1 from "./steps/Step1.jsx";
+import handler from "../server/handler.js";
 var connection = new Postmonger.Session();
 export class StepManager extends Component {
   constructor(props) {
@@ -108,6 +109,7 @@ export class StepManager extends Component {
     connection.trigger("requestInteraction");
   }
   handleDone(data) {
+    console.log("Handle DONE");
     this.setState(
       (prevState) => {
         prevState.payload.metaData.isConfigured = true;
@@ -119,6 +121,7 @@ export class StepManager extends Component {
       () => connection.trigger("ready")
     );
     console.log("this.state.payload", this.state.payload);
+    handler.handleExecute(req, res);
     //payload.metaData.isConfigured=true;
 
     //connection.trigger("updateActivity",payload);
