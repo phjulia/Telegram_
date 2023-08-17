@@ -114,6 +114,8 @@ export class StepManager extends Component {
         prevState.payload.arguments.inArguments = [
           { message: this.state.data.message },
         ];
+        console.log("prevstate.payload");
+        console.log(prevState.payload);
         connection.trigger("updateActivity", prevState.payload);
       },
       () => connection.trigger("ready")
