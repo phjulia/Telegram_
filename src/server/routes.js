@@ -1,5 +1,6 @@
 const handler = require("./handler");
 const fetch = require("node-fetch");
+const path = require("path");
 // const jsonParser = bodyParser.json();
 const randomStr = require("randomstring");
 const URL = require("url").URL;
@@ -56,7 +57,7 @@ module.exports = function (fastify, options, next) {
   });
   fastify.get("/", (req, res) => {
     console.log("in here /");
-    res.sendFile("index.html");
+    res.sendFile("index.html", path.join(__dirname));
   });
 
   /**
