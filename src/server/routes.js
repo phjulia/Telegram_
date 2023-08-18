@@ -58,8 +58,7 @@ module.exports = function (fastify, options, next) {
   fastify.get("/", (req, res) => {
     var filePath = "../src/client/index.html";
     var resolvedPath = path.resolve(filePath);
-    console.log(__dirname);
-    console.log(resolvedPath);
+    console.log("hostname", process.env.RENDER_EXTERNAL_HOSTNAME);
     res.sendFile(resolvedPath);
   });
   fastify.get("/telegram.png", (req, res) => {
