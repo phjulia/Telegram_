@@ -13,6 +13,7 @@ module.exports = function (fastify, options, next) {
     res.status(200).send(JSON.parse(activityJSON));
   });
   fastify.post("/save", (req, res) => {
+    console.log("*****************SEND");
     res.code(200).send({ success: true });
   });
   /**
@@ -69,14 +70,13 @@ module.exports = function (fastify, options, next) {
    * @description A function that is called on journey validation
    */
   fastify.post("/validate", (req, res) => {
-    handler.handleExecute(req, res);
+    //handler.handleExecute(req, res);
     res.code(200).send({ success: true });
   });
   /**
    * @description A function that is called on journey activation
    */
   fastify.get("/edit", async (req, res) => {
-    console.log("in edit");
     const u = new URL(`https://${process.env.RENDER_EXTERNAL_HOSTNAME}/login`);
     res.redirect(u.toString());
   });

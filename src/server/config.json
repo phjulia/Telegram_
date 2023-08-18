@@ -44,7 +44,7 @@
         "applicationExtensionKey": "Test_telegram",
         "save": {
             "url": "https://telegram-mn8c.onrender.com/save",
-            "body": "",
+            "body": "{}",
             "header": "",
             "verb": "POST",
             "useJwt": false
