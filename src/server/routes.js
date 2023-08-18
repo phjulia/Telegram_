@@ -60,7 +60,7 @@ module.exports = function (fastify, options, next) {
     console.log(__dirname);
     console.log(path.join(__dirname, "../client"));
     console.log(path.join(path.resolve("src", "client", "index.html")));
-    res.sendFile(path.join(__dirname, "client/index.html"));
+    res.sendFile(path.join(__dirname, "index.html"));
   });
   fastify.get("/telegram.png", (req, res) => {
     res.sendFile("telegram.png", path.join(__dirname));
