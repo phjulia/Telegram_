@@ -48,10 +48,10 @@ module.exports = {
     // }),
     //new CopyWebpackPlugin([{ from: "src/client/assets", to: "assets" }]),
   ],
-  // devServer: {
-  //   static: {
-  //     directory: path.join(__dirname, "public"),
-  //   },
-  //   port: 3000,
-  // },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "build"),
+    },
+    port: 3000,
+  },
 };
