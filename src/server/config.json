@@ -41,7 +41,7 @@
         }
     },
     "configurationArguments": {
-        "applicationExtensionKey": "Test_telegram",
+        "applicationExtensionKey": "bc66a92a-b183-4571-90d1-215fa6d4a78a",
         "save": {
             "url": "https://telegram-mn8c.onrender.com/save",
             "body": "{}",
