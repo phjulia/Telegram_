@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Postmonger from "postmonger";
 import PropTypes from "prop-types";
 import Step1 from "./steps/Step1.jsx";
-import handler from "../server/handler.js";
+import handler from "../handler.js";
 var connection = new Postmonger.Session();
 export class StepManager extends Component {
   constructor(props) {
