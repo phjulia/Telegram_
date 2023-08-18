@@ -57,6 +57,8 @@ module.exports = function (fastify, options, next) {
   });
   fastify.get("/", (req, res) => {
     console.log(path.join(__dirname, "../client/index.html"));
+    console.log(__dirname);
+    console.log(path.join(__dirname, "../client"));
     console.log(path.join(path.resolve("src", "client", "index.html")));
     res.sendFile(path.join(__dirname, "../client/index.html"));
   });
