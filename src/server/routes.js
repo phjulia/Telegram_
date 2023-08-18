@@ -55,12 +55,12 @@ module.exports = function (fastify, options, next) {
     //get user and mid etc
     res.redirect(`https://${process.env.RENDER_EXTERNAL_HOSTNAME}/`);
   });
-  fastify.get("/", (req, res) => {
-    var filePath = "../src/client/index.html";
-    var resolvedPath = path.resolve(filePath);
-    console.log("hostname", process.env.RENDER_EXTERNAL_HOSTNAME);
-    res.sendFile(resolvedPath);
-  });
+  // fastify.get("/", (req, res) => {
+  //   var filePath = "../src/client/index.html";
+  //   var resolvedPath = path.resolve(filePath);
+  //   console.log("hostname", process.env.RENDER_EXTERNAL_HOSTNAME);
+  //   res.sendFile(resolvedPath);
+  // });
   fastify.get("/telegram.png", (req, res) => {
     res.sendFile("telegram.png", path.join(__dirname));
   });
