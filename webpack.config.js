@@ -1,5 +1,5 @@
 const path = require("path");
-//const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 //const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
@@ -31,23 +31,23 @@ module.exports = {
     extensions: ["*", ".js", ".jsx"],
   },
   output: {
-    path: path.join(__dirname, "public/activity/build"),
+    path: path.join(__dirname, "/build"),
     //path: path.join(__dirname, "public/activity/edit"),
     filename: "main.js",
     //   publicPath: "/activity/edit/",
   },
-  //plugins: [
-  // new CleanWebpackPlugin(),
-  // new HtmlWebpackPlugin({
-  //   template: path.join(__dirname, "server", "index.html"),
-  //   filename: "index.html",
-  // }),
-  // new HtmlWebpackPlugin({
-  //   template: path.join(__dirname, "public", "index.html"),
-  //   filename: "index.html",
-  // }),
-  //new CopyWebpackPlugin([{ from: "src/client/assets", to: "assets" }]),
-  // ],
+  plugins: [
+    // new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "src/server", "index.html"),
+      filename: "index.html",
+    }),
+    // new HtmlWebpackPlugin({
+    //   template: path.join(__dirname, "public", "index.html"),
+    //   filename: "index.html",
+    // }),
+    //new CopyWebpackPlugin([{ from: "src/client/assets", to: "assets" }]),
+  ],
   // devServer: {
   //   static: {
   //     directory: path.join(__dirname, "public"),
