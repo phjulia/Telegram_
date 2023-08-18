@@ -14,11 +14,7 @@ export class StepManager extends Component {
         },
         arguments: {
           execute: {
-            inArguments: [
-              {
-                isConfigured: false,
-              },
-            ],
+            inArguments: [{ configuration: {} }],
           },
         },
       },
@@ -92,14 +88,14 @@ export class StepManager extends Component {
     connection.on("requestedSchema", (data) =>
       this.setState({ schema: data.schema })
     );
-    //connection.on("clickedNext", (data) => this.setState({data:}));
+    connection.on("requestedInteraction", (data) =>
+      this.setState({ interaction: data })
+    );
+
     connection.on("clickedNext", async (data) => {
       console.log("clickedNext");
       await this.handleDone(data);
     });
-    connection.on("requestedInteraction", (data) =>
-      this.setState({ interaction: data })
-    );
     connection.on("requestedTriggerEventDefinition", (data) =>
       this.setState({ eventDefinition: data })
     );
@@ -116,9 +112,9 @@ export class StepManager extends Component {
     this.setState(
       (prevState) => {
         prevState.payload.metaData.isConfigured = true;
-        prevState.payload.arguments.inArguments = [
-          { message: this.state.data.message },
-        ];
+        prevState.payload.arguments.inArguments[0] = {
+          message: this.state.data.message,
+        };
         connection.trigger("updateActivity", prevState.payload);
         return prevState;
       },
