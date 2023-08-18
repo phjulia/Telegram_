@@ -113,7 +113,9 @@ export class StepManager extends Component {
       (prevState) => {
         prevState.payload.metaData.isConfigured = true;
         prevState.payload.arguments.inArguments[0] = {
-          message: this.state.data.message,
+          configuration: {
+            message: this.state.data.message,
+          },
         };
         connection.trigger("updateActivity", prevState.payload);
         return prevState;
