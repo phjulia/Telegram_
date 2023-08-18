@@ -46,14 +46,14 @@ module.exports = function (fastify, options, next) {
     if (req.session.stateToken == req.query.state) {
       req.session.token = await getToken(
         req,
-        `https://telegram-mn8c.onrender.com/response`,
+        `https://${process.env.RENDER_EXTERNAL_HOSTNAME}/response`,
         client_id,
         tenant
       );
       req.session.userInfo = await getUserInfo(req.session.token, tenant);
     }
     //get user and mid etc
-    res.redirect("https://telegram-mn8c.onrender.com/");
+    res.redirect(`https://${process.env.RENDER_EXTERNAL_HOSTNAME}/`);
   });
   fastify.get("/", (req, res) => {
     var filePath = "../src/client/index.html";
@@ -77,7 +77,7 @@ module.exports = function (fastify, options, next) {
    */
   fastify.get("/edit", async (req, res) => {
     console.log("in edit");
-    const u = new URL("https://telegram-mn8c.onrender.com/login");
+    const u = new URL(`https://${process.env.RENDER_EXTERNAL_HOSTNAME}/login`);
     res.redirect(u.toString());
   });
   /**
@@ -93,7 +93,7 @@ module.exports = function (fastify, options, next) {
   });
   fastify.get("/running", (req, res) => {
     const u = new URL(
-      "https://telegram-mn8c.onrender.com/auth/login/activityRunning"
+      `https://${process.env.RENDER_EXTERNAL_HOSTNAME}/auth/login/activityRunning`
     );
     res.redirect(u.toString());
   });
