@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 //const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./src/client/index.jsx",
+  entry: "./src/server/index.jsx",
   module: {
     // exclude node_modules
     rules: [
@@ -39,14 +39,9 @@ module.exports = {
   plugins: [
     // new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "src/server", "index.html"),
+      template: path.join(__dirname, "/src/server", "index.html"),
       filename: "index.html",
     }),
-    // new HtmlWebpackPlugin({
-    //   template: path.join(__dirname, "public", "index.html"),
-    //   filename: "index.html",
-    // }),
-    //new CopyWebpackPlugin([{ from: "src/client/assets", to: "assets" }]),
   ],
   devServer: {
     static: {
