@@ -58,6 +58,7 @@ module.exports = function (fastify, options, next) {
   fastify.get("/", (req, res) => {
     var filePath = "../src/client/index.html";
     var resolvedPath = path.resolve(filePath);
+    console.log(__dirname);
     console.log(resolvedPath);
     res.sendFile(resolvedPath);
   });
