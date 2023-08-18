@@ -3,7 +3,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 //const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: __dirname + "/src/server/index.jsx",
+  entry: ["./src/client/index.jsx"],
+  output: {
+    path: path.join(__dirname, "/build"),
+    //path: path.join(__dirname, "public/activity/edit"),
+    filename: "main.js",
+    //   publicPath: "/activity/edit/",
+  },
   module: {
     // exclude node_modules
     rules: [
@@ -30,16 +36,10 @@ module.exports = {
   resolve: {
     extensions: ["*", ".js", ".jsx"],
   },
-  output: {
-    path: path.join(__dirname, "/build"),
-    //path: path.join(__dirname, "public/activity/edit"),
-    filename: "main.js",
-    //   publicPath: "/activity/edit/",
-  },
   plugins: [
     // new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "/src/server", "index.html"),
+      template: "./src/client/index.html",
       filename: "index.html",
     }),
   ],
