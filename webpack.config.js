@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 //const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./src/server/index.jsx",
+  entry: __dirname + "/src/server/index.jsx",
   module: {
     // exclude node_modules
     rules: [
