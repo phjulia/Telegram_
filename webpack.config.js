@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 //const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: ["./src/server/client/index.jsx"],
+  entry: ["./src/client/index.jsx"],
   output: {
     path: path.join(__dirname, "/build"),
     //path: path.join(__dirname, "public/activity/edit"),
@@ -39,7 +39,7 @@ module.exports = {
   plugins: [
     // new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: "./src/server/index.html",
+      template: "./src/client/index.html",
       filename: "index.html",
     }),
   ],
