@@ -56,7 +56,7 @@ module.exports = function (fastify, options, next) {
     res.redirect("https://telegram-mn8c.onrender.com/");
   });
   fastify.get("/", (req, res) => {
-    res.sendFile("index.html", path.join(__dirname));
+    res.sendFile("../client/index.html");
   });
   fastify.get("/telegram.png", (req, res) => {
     res.sendFile("telegram.png", path.join(__dirname));
