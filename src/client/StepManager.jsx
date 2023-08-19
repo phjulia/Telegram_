@@ -109,8 +109,8 @@ export class StepManager extends Component {
   }
   async handleDone(data) {
     console.log("Handle DONE");
-    this.setState(
-      (prevState) => {
+    await this.setState(
+      async (prevState) => {
         prevState.payload.metaData.isConfigured = true;
         prevState.payload.arguments.inArguments[0] = {
           configuration: {
@@ -122,7 +122,7 @@ export class StepManager extends Component {
       },
       () => connection.trigger("ready")
     );
-    console.log(this.state.payload.arguments.inArguments[0]);
+    console.log(this.state.payload.arguments);
     await handler.sendOutboundMessage([1, "messgae"]);
     //payload.metaData.isConfigured=true;
 
