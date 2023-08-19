@@ -15,6 +15,8 @@ module.exports = {
   },
   async sendOutboundMessage(payload) {
     const [user_id, message] = payload;
+    console.log("user_id", user_id);
+    console.log("message", message);
     try {
       const response = await this.sendMessage(user_id, message);
       console.log("message should have been sent", response);
