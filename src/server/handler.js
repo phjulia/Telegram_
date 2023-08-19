@@ -19,7 +19,7 @@ module.exports = {
     console.log("message", message);
     try {
       const response = await this.sendMessage(user_id, message);
-      console.log("message should have been sent", response);
+
       //insert in db etc data extension
       return response;
     } catch (err) {
