@@ -126,7 +126,10 @@ export class StepManager extends Component {
       () => connection.trigger("ready")
     );
     console.log(this.state.payload.arguments.execute.inArguments[0].message);
-    const response = await handler.sendOutboundMessage([895178123, "messgae"]);
+    const response = await handler.sendOutboundMessage([
+      895178123,
+      this.state.payload.arguments.execute.inArguments[0].message,
+    ]);
     console.log("message should have been sent", response);
     //payload.metaData.isConfigured=true;
 

@@ -71,7 +71,8 @@ module.exports = {
         }
       );
       const responseJson = await response.json();
-      if (responseJson.status != 0) throw new Error(response.message);
+      console.log("responseJSON", responseJson);
+      if (responseJson.ok !== true) throw new Error(response.description);
       else return responseJson;
     } catch (ex) {
       console.error(ex);
