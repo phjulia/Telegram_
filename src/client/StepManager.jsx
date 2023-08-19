@@ -112,6 +112,7 @@ export class StepManager extends Component {
     await this.setState(
       async (prevState) => {
         prevState.payload.metaData.isConfigured = true;
+        console.log(prevState.payload.arguments);
         prevState.payload.arguments.inArguments.push({
           message: this.state.data.message,
         });
