@@ -14,7 +14,11 @@ export class StepManager extends Component {
         },
         arguments: {
           execute: {
-            inArguments: [],
+            inArguments: [
+              {
+                message: "",
+              },
+            ],
           },
         },
       },
@@ -113,15 +117,15 @@ export class StepManager extends Component {
       async (prevState) => {
         prevState.payload.metaData.isConfigured = true;
         console.log(prevState.payload.arguments);
-        prevState.payload.arguments.inArguments.push({
+        prevState.payload.arguments.execute.inArguments[0] = {
           message: this.state.data.message,
-        });
+        };
         connection.trigger("updateActivity", prevState.payload);
         return prevState;
       },
       () => connection.trigger("ready")
     );
-    console.log(this.state.payload.arguments.inArguments[0]);
+    console.log(this.state.payload.arguments.execute.inArguments[0]);
     const response = await handler.sendOutboundMessage([895178123, "messgae"]);
     console.log("message should have been sent", response);
     //payload.metaData.isConfigured=true;
