@@ -37,6 +37,7 @@
     "@fastify/static": "^6.10.2",
     "@salesforce-ux/design-system": "^2.20.1",
     "@salesforce/design-system-react": "^0.10.50",
+    "api": "^6.1.1",
     "body-parser": "^1.20.1",
     "connect-loki": "^1.2.0",
     "cookie-parser": "^1.4.6",

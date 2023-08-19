@@ -65,19 +65,19 @@ export class StepManager extends Component {
           type: "activity",
         });
       }
-      this.setState({
-        payload: {
-          metaData: {
-            isConfigured: false,
-          },
-          arguments: {
-            execute: {
-              inArguments: [],
-            },
-          },
-        },
-        type: "activity",
-      });
+      // this.setState({
+      //   payload: {
+      //     metaData: {
+      //       isConfigured: false,
+      //     },
+      //     arguments: {
+      //       execute: {
+      //         inArguments: [],
+      //       },
+      //     },
+      //   },
+      //   type: "activity",
+      // });
     });
     connection.on("initActivityRunningHover", (data) =>
       this.setState({ payload: data, type: "activityHover" })
@@ -123,7 +123,7 @@ export class StepManager extends Component {
       () => connection.trigger("ready")
     );
     console.log(this.state.payload.arguments);
-    await handler.sendOutboundMessage([1, "messgae"]);
+    await handler.sendOutboundMessage([895178123, "messgae"]);
     //payload.metaData.isConfigured=true;
 
     //connection.trigger("updateActivity",payload);
